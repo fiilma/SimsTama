@@ -1,0 +1,4 @@
+SimsTama
+========
+
+Tamagoshi version Sims
