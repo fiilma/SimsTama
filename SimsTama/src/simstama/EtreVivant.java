@@ -29,7 +29,9 @@ public class EtreVivant {
     private int jaugeCharme;
     private int jaugeAbilite;
     private int statutLiberte;
-    
+
+    private EtreVivant compagnon;
+
 
     //********* Constructeurs *********//
     public EtreVivant(String nom, String prenom, String sexe) {
@@ -72,39 +74,44 @@ public class EtreVivant {
     ;
     
     //******** Methodes de la classe *******//
-    public void feterSonAnniversaire(EtreVivant personne) {
-        personne.age++;
-        System.out.println("joyeux anniversaire " + personne.prenom);
+    public void feterSonAnniversaire(){
+        age++;
+        System.out.println("joyeux anniversaire " + prenom);
     }
-
-    public void manger(EtreVivant personne) {
+    
+    public void manger(){
         jaugeFaim = 10;
     }
-
-    public void boire(EtreVivant personne) {
-        if (jaugeFaim < 10) {
-            jaugeFaim++;
+    
+    public void boire(){
+        if(jaugeFaim < 10){
+            jaugeFaim++ ; 
         }
-
+        
     }
-
-    public void seLaver(EtreVivant personne) {
+    
+    public void seLaver(){
         jaugeProprete = 10;
     }
-
-    public void seMarier(EtreVivant personne1, EtreVivant personne2) {
-        if (personne1.sexe.equals("male") && personne2.sexe.equals("femele")) {
-            System.out.println("Félicitation monsieur et madame" + personne1.nom);
-        } else if (personne2.sexe.equals("male") && personne1.sexe.equals("femele")) {
-            System.out.println("Félicitation monsieur et madame" + personne2.nom);
-        } else if (personne2.sexe.equals("male") && personne1.sexe.equals("male")) {
+    
+    public void seMarier(EtreVivant personne){
+        if(sexe.equals("male")&& personne.sexe.equals("femele")){
+            System.out.println("Félicitation monsieur et madame" + nom);
+        }
+        else if(personne.sexe.equals("male")&& sexe.equals("femele")){
+            System.out.println("Félicitation monsieur et madame" + personne.nom);
+        }
+        else if(personne.sexe.equals("male")&& sexe.equals("male")){
             System.out.println("Felicitation aux jeunes mariés");
-        } else {
+        }
+        else {
             System.out.println("Felicitation aux jeunes mariées");
         }
-        personne1.statutMatrimonial = "en couple avec " + personne2.prenom + " " + personne2.nom;
-        personne2.statutMatrimonial = "en couple avec " + personne1.prenom + " " + personne1.nom;
-
+        statutMatrimonial = "en couple";
+        personne.statutMatrimonial = "en couple";
+        compagnon = personne;
+        personne.compagnon = this;
+        
     }
 
     public EtreVivant faireUnBebe(EtreVivant papa, EtreVivant maman, String prenom) {
@@ -155,8 +162,11 @@ public class EtreVivant {
 
     }
 
- 
+
+
     //************ GET et SET ***************//
+
+
 
     public int getStatutLiberte() {
 
@@ -168,6 +178,7 @@ public class EtreVivant {
         this.statutLiberte = statut;
 
     }
+
 
     public int getAge() {
         return age;
@@ -269,9 +280,6 @@ public class EtreVivant {
         return mere;
     }
 
-    
-
-   
     public String getNom() {
         return nom;
     }
@@ -311,9 +319,6 @@ public class EtreVivant {
     public void setAge(int age) {
         this.age = age;
     }
-
-
-   
 
             
 }
