@@ -1,7 +1,5 @@
 /*
-Projet Java 1
-Nicolas Blaise 
-Roumaissa Boussellaoui
+Projet Java 1 p1- Octobre 2014
 SimsTama
 
  */
@@ -9,14 +7,21 @@ package simstama;
 
 /**
  *
- * @author isen
+ * @authors
+ * Nicolas Blaise 
+Roumaissa Boussellaoui
  */
-public class Main {
+public class SimsTama {
 
-    /**
-     * @param args the command line arguments
-     */
+ 
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+        
+        EtreHumain monHumain= new EtreHumain("Bleu","Noir","Magicien");
+        
+        System.out.println(monHumain.getSonMetier());
+                
+        
+        
+        
+                }
 }
