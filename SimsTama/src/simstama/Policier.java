@@ -29,4 +29,16 @@ public class Policier extends Metier {
     
     }
     
+    private void libererPersonne(EtreVivant personne){
+    
+        if (personne.getStatutLiberte()==1) {
+            personne.setStatutLiberte(0);
+        }
+    }
+    
+    private void tuer(EtreVivant personne){
+    
+    
+    }
+    
 }
