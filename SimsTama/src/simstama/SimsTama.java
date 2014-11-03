@@ -11,9 +11,8 @@ package simstama;
  * Nicolas Blaise 
 Roumaissa Boussellaoui
  */
-public class SimsTama {
-
- 
+public class SimsTama{
+    
     public static void main(String[] args) {
         
         EtreHumain monHumain= new EtreHumain("Bleu","Noir","Magicien");
