@@ -18,7 +18,7 @@ public class EtreVivant {
     private String statutMatrimonial = "célibataire";
     private String pere;
     private String mere;
-
+    private String statutEtat;
     private int jaugeGentillesse;
     private int jaugeProprete;
     private int jaugeFaim;
@@ -29,6 +29,7 @@ public class EtreVivant {
     private int jaugeCharme;
     private int jaugeAbilite;
     private int statutLiberte;
+    
 
     //********* Constructeurs *********//
     public EtreVivant(String nom, String prenom, String sexe) {
@@ -45,6 +46,7 @@ public class EtreVivant {
         jaugeForce = 0;
         jaugeCharme = 5;
         jaugeAbilite = 0;
+        this.statutEtat="Vivant";
 
     }
 
@@ -60,6 +62,8 @@ public class EtreVivant {
         jaugeForce = 0;
         jaugeCharme = 5;
         jaugeAbilite = 0;
+        this.statutLiberte=0;
+        this.statutEtat="Vivant";
     }
 
     public EtreVivant() {
@@ -151,9 +155,8 @@ public class EtreVivant {
 
     }
 
-    //**************** getter et setter ***************
-    <<<<<<< HEAD //************ GET et SET ***************//
-
+ 
+    //************ GET et SET ***************//
 
     public int getStatutLiberte() {
 
@@ -165,25 +168,6 @@ public class EtreVivant {
         this.statutLiberte = statut;
 
     }
-
-    =======
-
-    public String getNom() {
-        return nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public String getSexe() {
-        return sexe;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-    >>>>>>> ee8e13cbaed6f34b7bc1b13634776c470ec6a1f0
 
     public int getAge() {
         return age;
@@ -269,11 +253,11 @@ public class EtreVivant {
         this.jaugeAbilite = jaugeAbilite;
     }
 
-    public String getStatus() {
+    public String getStatusMatrimonial() {
         return statutMatrimonial;
     }
 
-    public void setStatus(String status) {
+    public void setStatusMatrimonial(String status) {
         this.statutMatrimonial = status;
     }
 
@@ -285,12 +269,9 @@ public class EtreVivant {
         return mere;
     }
 
-    <<<<<<< HEAD
+    
 
-    =======
-    /**
-     * @return the nom
-     */
+   
     public String getNom() {
         return nom;
     }
@@ -330,8 +311,9 @@ public class EtreVivant {
     public void setAge(int age) {
         this.age = age;
     }
-    >>>>>>> a4ab2885b594c0199fd17d7c26e9af06014b8598
 
+
+   
 
             
 }
