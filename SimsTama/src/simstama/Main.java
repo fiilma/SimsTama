@@ -1,6 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+Projet Java 1
+Nicolas Blaise 
+Roumaissa Boussellaoui
+SimsTama
+
  */
 package simstama;
 
@@ -8,7 +11,7 @@ package simstama;
  *
  * @author isen
  */
-public class SimsTama {
+public class Main {
 
     /**
      * @param args the command line arguments
