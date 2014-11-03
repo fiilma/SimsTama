@@ -11,5 +11,31 @@ package simstama;
  */
 public class Metier {
     
-  
+    
+    
+    /**** Variables *****/
+    
+    private String nomMetier;
+    
+    /**** Get/Set ******/
+   public void setNom(String nom){
+   
+   this.nomMetier=nom;
+   }
+    
+   public String getNom(){
+   
+   return this.nomMetier;
+   }
+   
+   
+    /***** Constructeur******/
+   
+   
+   public Metier(String nom){
+   this.nomMetier=nom;
+   }
+ 
+   public Metier(){};
+   
 }

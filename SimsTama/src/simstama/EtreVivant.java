@@ -27,6 +27,7 @@ public class EtreVivant {
     private int jaugeForce;
     private int jaugeCharme;
     private int jaugeAbilite;
+    private int statutLiberte;
 
     
 
@@ -121,8 +122,21 @@ public class EtreVivant {
     
     
     
-    // getter et setter
+   //************ GET et SET ***************//
     
+    
+    public int getStatutLiberte(){
+      
+        return this.statutLiberte;
+            
+        }
+    
+    
+    
+    public void setStatutLiberte(int statut){
+     this.statutLiberte=statut;
+    
+    }
     
     
     public int getAge() {

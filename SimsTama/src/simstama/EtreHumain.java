@@ -41,9 +41,7 @@ public class EtreHumain extends EtreVivant {
         
 
     }
-   /* public EtreHumain(){
-    
-    }*/
+    public EtreHumain(){}
     
     
     //****** Methodes des êtres humain ******//

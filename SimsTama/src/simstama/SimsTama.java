@@ -23,3 +23,19 @@ public class SimsTama{
        
                 }
 }
+
+
+/*
+****************** TESTER ET FONTIONNEL ****************** 
+-Création d'un etre humain avec nom, prenom, couleur ect ..
+
+
+
+
+
+
+
+
+
+*/
+
