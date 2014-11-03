@@ -30,6 +30,7 @@ public class EtreVivant {
 
     
 
+    //********* Constructeurs *********//
     
     public EtreVivant(String nom, String prenom,String sexe){
         this.prenom = prenom;
@@ -42,7 +43,9 @@ public class EtreVivant {
         this.nom = nom;
         
     }
+    public EtreVivant(){};
     
+    //******** Methodes de la classe *******//
     public void feterSonAnniversaire(EtreVivant personne){
         personne.age++;
         System.out.println("joyeux anniversaire " + personne.prenom);
@@ -279,7 +282,50 @@ public class EtreVivant {
         return mere;
     }
 
+<<<<<<< HEAD
 
+=======
+    /**
+     * @return the nom
+     */
+    public String getNom() {
+        return nom;
+    }
+    public void setNom(String nom){
+        this.nom = nom;
+    
+    }
+
+    /**
+     * @return the prenom
+     */
+    public String getPrenom() {
+        return prenom;
+    }
+    
+    public void setPreom(String prenom){
+        this.prenom=prenom;
+    
+    }
+
+    /**
+     * @return the sexe
+     */
+    public String getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(String sexe){
+        this.sexe=sexe;
+        
+    }
+    /**
+     * @param age the age to set
+     */
+    public void setAge(int age) {
+        this.age = age;
+    }
+>>>>>>> a4ab2885b594c0199fd17d7c26e9af06014b8598
 
 
             

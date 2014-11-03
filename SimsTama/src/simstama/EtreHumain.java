@@ -8,7 +8,7 @@ package simstama;
  *
  * @author roumi
  */
-public class EtreHumain {
+public class EtreHumain extends EtreVivant {
     
     private String couleurPeau;
     private String couleurCheveux;
@@ -33,13 +33,17 @@ public class EtreHumain {
     
     //****** Constructeurs ******//
     
-    public EtreHumain(String peau,String cheveux, String metier){
-    
-    this.couleurCheveux=cheveux;
-    this.couleurPeau=peau;
-    this.sonMetier=metier;
+    public EtreHumain(String nom, String prenom,String sexe,String couleurPeau,String CouleurCheveux,String metier){
+        super(nom,prenom,sexe);
+        this.couleurCheveux=CouleurCheveux;
+        this.couleurPeau=couleurPeau;
+        this.sonMetier=metier;
+        
+
     }
-    public EtreHumain(){};
+   /* public EtreHumain(){
+    
+    }*/
     
     
     //****** Methodes des êtres humain ******//

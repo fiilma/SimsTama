@@ -15,12 +15,11 @@ public class SimsTama{
     
     public static void main(String[] args) {
         
-        EtreHumain monHumain= new EtreHumain("Bleu","Noir","Magicien");
+        EtreHumain monHumain= new EtreHumain("roumi","seb","truc","Bleu","Noir","Magicien");
         
-        System.out.println(monHumain.getSonMetier());
+        System.out.println(monHumain.getNom()+monHumain.getPrenom());
                 
         
-        
-        
+       
                 }
 }
