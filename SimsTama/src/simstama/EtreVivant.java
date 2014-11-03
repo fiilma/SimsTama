@@ -15,9 +15,10 @@ public class EtreVivant {
     private String sexe;
     private int age;
     private String couleur;    
-    private String status;
+    private String statut = "célibataire";
     private String pere;
     private String mere;
+<<<<<<< HEAD
     private int jaugeGentillesse;
     private int jaugeProprete;
     private int jaugeFaim;
@@ -28,6 +29,17 @@ public class EtreVivant {
     private int jaugeCharme;
     private int jaugeAbilite;
     private int statutLiberte;
+=======
+    private int jaugeGentillesse = 5;
+    private int jaugeProprete = 10;
+    private int jaugeFaim = 10;
+    private int jaugeHumeur = 5;
+    private int jaugeFatigue = 10;
+    private int jaugeIntelligence = 0;
+    private int jaugeForce = 0;
+    private int jaugeCharme = 5;
+    private int jaugeAbilite = 0;
+>>>>>>> ee8e13cbaed6f34b7bc1b13634776c470ec6a1f0
 
     
 
@@ -48,35 +60,53 @@ public class EtreVivant {
     
     //******** Methodes de la classe *******//
     public void feterSonAnniversaire(EtreVivant personne){
-        
+        personne.age++;
+        System.out.println("joyeux anniversaire " + personne.prenom);
     }
     
     public void manger(EtreVivant personne){
-        
+        jaugeFaim = 10;
     }
     
     public void boire(EtreVivant personne){
+        if(jaugeFaim < 10){
+            jaugeFaim++ ; 
+        }
         
     }
     
     public void seLaver(EtreVivant personne){
-        
+        jaugeProprete = 10;
     }
     
     public void seMarier(EtreVivant personne1,EtreVivant personne2){
+        if(personne1.sexe.equals("male")&& personne2.sexe.equals("femele")){
+            System.out.println("Félicitation monsieur et madame" + personne1.nom);
+        }
+        else if(personne2.sexe.equals("male")&&personne1.sexe.equals("femele")){
+            System.out.println("Félicitation monsieur et madame" + personne2.nom);
+        }
+        else if(personne2.sexe.equals("male")&&personne1.sexe.equals("male")){
+            System.out.println("Felicitation aux jeunes mariés");
+        }
+        else {
+            System.out.println("Felicitation aux jeunes mariées");
+        }
+        personne1.statut = "en couple avec "+ personne2.prenom + " " + personne2.nom;
+        personne2.statut = "en couple avec "+ personne1.prenom + " " + personne1.nom;
         
     }
     
-    public EtreVivant faireUnBebe(EtreVivant personne){
+    public EtreVivant faireUnBebe(EtreVivant papa, EtreVivant maman,String prenom){
         
-        EtreVivant bebe = new EtreVivant("bob", "marley");
-        
+        EtreVivant bebe = new EtreVivant(nom, papa.nom);
+        age = 0;
         
         return bebe;
     }
     
     public void mourir(EtreVivant personne){
-        
+        personne.statut = "mort";
     }
     
     public void seDeplacer(EtreVivant personne, String lieu){ // a modifier String lieu en Lieu lieu quand la classe existera
@@ -117,9 +147,11 @@ public class EtreVivant {
 
     
     
+    //**************** getter et setter ***************
     
     
     
+<<<<<<< HEAD
     
     
    //************ GET et SET ***************//
@@ -138,6 +170,27 @@ public class EtreVivant {
     
     }
     
+=======
+
+    public String getNom() {
+        return nom;
+    }
+
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+
+    public String getSexe() {
+        return sexe;
+    }
+
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+>>>>>>> ee8e13cbaed6f34b7bc1b13634776c470ec6a1f0
     
     public int getAge() {
         return age;
@@ -245,12 +298,12 @@ public class EtreVivant {
 
 
     public String getStatus() {
-        return status;
+        return statut;
     }
 
 
     public void setStatus(String status) {
-        this.status = status;
+        this.statut = status;
     }
 
  
@@ -263,6 +316,9 @@ public class EtreVivant {
         return mere;
     }
 
+<<<<<<< HEAD
+
+=======
     /**
      * @return the nom
      */
@@ -303,6 +359,7 @@ public class EtreVivant {
     public void setAge(int age) {
         this.age = age;
     }
+>>>>>>> a4ab2885b594c0199fd17d7c26e9af06014b8598
 
 
             
