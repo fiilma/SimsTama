@@ -29,6 +29,7 @@ public class EtreVivant {
     private int jaugeCharme;
     private int jaugeAbilite;
     private int statutLiberte;
+    private int random;
 
     private EtreVivant compagnon;
 
@@ -96,30 +97,50 @@ public class EtreVivant {
     
     public void seMarier(EtreVivant personne){
         if(sexe.equals("male")&& personne.sexe.equals("femele")){
-            System.out.println("Félicitation monsieur et madame" + nom);
+            System.out.println("Félicitation monsieur et madame " + nom);
+            personne.nom=nom;
         }
         else if(personne.sexe.equals("male")&& sexe.equals("femele")){
-            System.out.println("Félicitation monsieur et madame" + personne.nom);
+            System.out.println("Félicitation monsieur et madame " + personne.nom);
+            nom = personne.nom;
         }
-        else if(personne.sexe.equals("male")&& sexe.equals("male")){
-            System.out.println("Felicitation aux jeunes mariés");
+        else if(personne.sexe.equals("male")&& sexe.equals("male ")){
+            System.out.println("Felicitation aux jeunes mariés ");
         }
         else {
-            System.out.println("Felicitation aux jeunes mariées");
+            System.out.println("Felicitation aux jeunes mariées ");
         }
+        
         statutMatrimonial = "en couple";
         personne.statutMatrimonial = "en couple";
-        compagnon = personne;
-        personne.compagnon = this;
+        setCompagnon(personne);
+        personne.setCompagnon(this);
         
     }
 
-    public EtreVivant faireUnBebe(EtreVivant papa, EtreVivant maman, String prenom) {
+    public EtreVivant faireUnBebe(String prenom , EtreVivant personne) {
 
-        EtreVivant bebe = new EtreVivant(nom, papa.nom);
-        age = 0;
+        if(this.sexe.equals("male")){
+            EtreVivant bebe = new EtreVivant(this.nom, prenom);
+            bebe.age = 0;
+            random = (int)(Math.random()*2);
+            if (random == 0){
+               bebe.sexe="male"; 
+            }
+            else{
+                bebe.sexe="femele";
+            }
+            return bebe;
+        }
+        else{
+            EtreVivant bebe = new EtreVivant(personne.nom, prenom);
+            bebe.age = 0;
+            return bebe;
+        }
+        
+        
 
-        return bebe;
+        
     }
 
     public void mourir(EtreVivant personne) {
@@ -289,9 +310,7 @@ public class EtreVivant {
 
     }
 
-    /**
-     * @return the prenom
-     */
+
     public String getPrenom() {
         return prenom;
     }
@@ -301,9 +320,7 @@ public class EtreVivant {
 
     }
 
-    /**
-     * @return the sexe
-     */
+
     public String getSexe() {
         return sexe;
     }
@@ -313,11 +330,19 @@ public class EtreVivant {
 
     }
 
-    /**
-     * @param age the age to set
-     */
+
     public void setAge(int age) {
         this.age = age;
+    }
+
+
+    public EtreVivant getCompagnon() {
+        return compagnon;
+    }
+
+
+    public void setCompagnon(EtreVivant compagnon) {
+        this.compagnon = compagnon;
     }
 
             
