@@ -20,7 +20,7 @@ public class SimsTama{
         System.out.println(monHumain.getNom()+monHumain.getPrenom());
               
         EtreVivant boby = new EtreVivant("blaise", "boby", "male");
-        EtreVivant biby = new EtreVivant("booo", "biby", "femele");
+        EtreVivant biby = new EtreVivant("booo", "biby", "femelle");
         boby.feterSonAnniversaire();
         biby.feterSonAnniversaire();
         System.out.println( boby.getPrenom()+ " a "+ boby.getAge() + " ans.");
@@ -53,6 +53,8 @@ public class SimsTama{
         System.out.println(buby.getPrenom());
         System.out.println(buby.getNom());
         System.out.println(buby.getSexe());
+        biby.mourir();
+        System.out.println(boby.getStatusMatrimonial());
         
         
                 }   
@@ -69,6 +71,7 @@ public class SimsTama{
 * se laver
 * se marier
 * faire un bebe
+* mourir
 
 
 

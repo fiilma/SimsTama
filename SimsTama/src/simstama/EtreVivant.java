@@ -16,8 +16,8 @@ public class EtreVivant {
     private int age;
     private String couleur;
     private String statutMatrimonial = "célibataire";
-    private String pere;
-    private String mere;
+    private EtreVivant pere;
+    private EtreVivant mere;
     private String statutEtat;
     private int jaugeGentillesse;
     private int jaugeProprete;
@@ -96,11 +96,11 @@ public class EtreVivant {
     }
     
     public void seMarier(EtreVivant personne){
-        if(sexe.equals("male")&& personne.sexe.equals("femele")){
+        if(sexe.equals("male")&& personne.sexe.equals("femelle")){
             System.out.println("Félicitation monsieur et madame " + nom);
             personne.nom=nom;
         }
-        else if(personne.sexe.equals("male")&& sexe.equals("femele")){
+        else if(personne.sexe.equals("male")&& sexe.equals("femelle")){
             System.out.println("Félicitation monsieur et madame " + personne.nom);
             nom = personne.nom;
         }
@@ -120,67 +120,87 @@ public class EtreVivant {
 
     public EtreVivant faireUnBebe(String prenom , EtreVivant personne) {
 
-        if(this.sexe.equals("male")){
+        if(sexe.equals("male")){
             EtreVivant bebe = new EtreVivant(this.nom, prenom);
+            bebe.age = 0;
+            bebe.pere = this;
+            bebe.mere = personne;
+            random = (int)(Math.random()*2);
+            if (random == 0){
+               bebe.sexe="male"; 
+            }
+            else{
+                bebe.sexe="femelle";
+            }
+            return bebe;
+        }
+        else{
+            EtreVivant bebe = new EtreVivant(personne.nom, prenom);
+            bebe.pere = personne;
+            bebe.mere = this;
             bebe.age = 0;
             random = (int)(Math.random()*2);
             if (random == 0){
                bebe.sexe="male"; 
             }
             else{
-                bebe.sexe="femele";
+                bebe.sexe="femelle";
             }
             return bebe;
         }
-        else{
-            EtreVivant bebe = new EtreVivant(personne.nom, prenom);
-            bebe.age = 0;
-            return bebe;
+        
+        
+
+        
+    }
+
+    public void mourir() {
+        statutEtat = "mort";
+        System.out.println("repose en paix "+ prenom+ " " + nom);
+        if (this.compagnon.sexe.equals("femelle")){
+            this.compagnon.statutMatrimonial = "veuve";
         }
-        
-        
-
-        
+        else{
+            this.compagnon.statutMatrimonial = "veuf";
+        }
     }
 
-    public void mourir(EtreVivant personne) {
-        personne.statutMatrimonial = "mort";
-    }
-
-    public void seDeplacer(EtreVivant personne, String lieu) { // a modifier String lieu en Lieu lieu quand la classe existera
+    public void seDeplacer( String lieu) { // a modifier String lieu en Lieu lieu quand la classe existera
 
     }
 
-    public void seduire(EtreVivant personne1, EtreVivant personne2) {
+    public void seduire( EtreVivant personne) {
+        // plus compliqué car faut que se soit une jauge par personne
+    }
+
+    public void communiquer( EtreVivant personne) {
+        jaugeHumeur++;
+    }
+
+    public void apprendre() {
+        jaugeIntelligence++;
 
     }
 
-    public void communiquer(EtreVivant personne1, EtreVivant personne2) {
+    public void seFaireBeau() {
+        jaugeHumeur++;
+    }
+
+    public void acheter( String objet) {  // remplacer String par Objet quand la classe existera
 
     }
 
-    public void apprendre(EtreVivant personne) {
+    public void divorcer( EtreVivant personne) {
+        this.compagnon.statutMatrimonial = "célibataire";
+        statutMatrimonial = "célibataire";
+    }
+
+    public void seBattre( EtreVivant personne) {
 
     }
 
-    public void seFaireBeau(EtreVivant personne) {
-
-    }
-
-    public void acheter(EtreVivant personne, String objet) {  // remplacer String par Objet quand la classe existera
-
-    }
-
-    public void divorcer(EtreVivant personne1, EtreVivant personne2) {
-
-    }
-
-    public void seBattre(EtreVivant personne1, EtreVivant personne2) {
-
-    }
-
-    public void allerAuxToilettes(EtreVivant personne) {
-
+    public void allerAuxToilettes() {
+        this.jaugeProprete += 2;
     }
 
 
