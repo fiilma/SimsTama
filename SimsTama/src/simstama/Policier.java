@@ -37,7 +37,7 @@ public class Policier extends Metier {
     }
     
     private void tuer(EtreVivant personne){
-    personne.mourir(personne);
+    personne.mourir();
     
     }
     
