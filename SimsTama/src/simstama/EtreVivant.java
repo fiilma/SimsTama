@@ -18,7 +18,7 @@ public class EtreVivant {
     private String statutMatrimonial = "célibataire";
     private String pere;
     private String mere;
-    private String statutEtat;
+    private int statutEtat;
     private int jaugeGentillesse;
     private int jaugeProprete;
     private int jaugeFaim;
@@ -31,7 +31,6 @@ public class EtreVivant {
     private int statutLiberte;
 
     private EtreVivant compagnon;
-
 
     //********* Constructeurs *********//
     public EtreVivant(String nom, String prenom, String sexe) {
@@ -48,7 +47,8 @@ public class EtreVivant {
         jaugeForce = 0;
         jaugeCharme = 5;
         jaugeAbilite = 0;
-        this.statutEtat="Vivant";
+        this.statutEtat = 1;
+        this.age = 0;
 
     }
 
@@ -64,66 +64,77 @@ public class EtreVivant {
         jaugeForce = 0;
         jaugeCharme = 5;
         jaugeAbilite = 0;
-        this.statutLiberte=0;
-        this.statutEtat="Vivant";
+        this.statutLiberte = 0;
+        this.statutEtat = 1;
+        this.age = 0;
     }
 
     public EtreVivant() {
     }
 
-    ;
-    
     //******** Methodes de la classe *******//
-    public void feterSonAnniversaire(){
-        age++;
+    public void feterSonAnniversaire() {
+        this.age++;
         System.out.println("joyeux anniversaire " + prenom);
     }
-    
-    public void manger(){
+
+    public void manger() {
+
+        //Pour plus tard proposer differents trucs et augmenter de differents points la jauge
         jaugeFaim = 10;
     }
-    
-    public void boire(){
-        if(jaugeFaim < 10){
-            jaugeFaim++ ; 
+
+    public void boire() {
+        if (jaugeFaim < 10) {
+            jaugeFaim++;
         }
-        
+
     }
-    
-    public void seLaver(){
+
+    public void seLaver() {
         jaugeProprete = 10;
     }
-    
-    public void seMarier(EtreVivant personne){
-        if(sexe.equals("male")&& personne.sexe.equals("femele")){
-            System.out.println("Félicitation monsieur et madame" + nom);
+
+    public void seMarier(EtreVivant personne) {
+        if (personne != null) {
+
+            if (sexe.equals("male") && personne.sexe.equals("femele")) {
+                System.out.println("Félicitation monsieur et madame" + nom);
+            } else if (personne.sexe.equals("male") && sexe.equals("femele")) {
+                System.out.println("Félicitation monsieur et madame" + personne.nom);
+            } else if (personne.sexe.equals("male") && sexe.equals("male")) {
+                System.out.println("Felicitation aux jeunes mariés");
+            } else {
+                System.out.println("Felicitation aux jeunes mariées");
+            }
+            statutMatrimonial = "en couple";
+            personne.statutMatrimonial = "en couple";
+            compagnon = personne;
+            personne.compagnon = this;
+        } else {
+            System.out.println("Votre comopagnon n'existe pas !");
         }
-        else if(personne.sexe.equals("male")&& sexe.equals("femele")){
-            System.out.println("Félicitation monsieur et madame" + personne.nom);
-        }
-        else if(personne.sexe.equals("male")&& sexe.equals("male")){
-            System.out.println("Felicitation aux jeunes mariés");
-        }
-        else {
-            System.out.println("Felicitation aux jeunes mariées");
-        }
-        statutMatrimonial = "en couple";
-        personne.statutMatrimonial = "en couple";
-        compagnon = personne;
-        personne.compagnon = this;
-        
     }
 
-    public EtreVivant faireUnBebe(EtreVivant papa, EtreVivant maman, String prenom) {
+    public EtreVivant faireUnBebe() {
 
-        EtreVivant bebe = new EtreVivant(nom, papa.nom);
-        age = 0;
+   //Faire le test à l'ext pour savoir si le compagnon existe ou non 
+        String prenom = donnerNom();
+        EtreVivant bebe = new EtreVivant(prenom, this.compagnon.nom);
 
         return bebe;
     }
 
+    public String donnerNom() {
+
+        String prenom = "";
+       //Ici on entre un nom et on le donne à la personne
+
+        return prenom;
+    }
+
     public void mourir(EtreVivant personne) {
-        personne.statutMatrimonial = "mort";
+        personne.statutEtat = 0;
     }
 
     public void seDeplacer(EtreVivant personne, String lieu) { // a modifier String lieu en Lieu lieu quand la classe existera
@@ -162,12 +173,7 @@ public class EtreVivant {
 
     }
 
-
-
     //************ GET et SET ***************//
-
-
-
     public int getStatutLiberte() {
 
         return this.statutLiberte;
@@ -178,7 +184,6 @@ public class EtreVivant {
         this.statutLiberte = statut;
 
     }
-
 
     public int getAge() {
         return age;
@@ -320,5 +325,4 @@ public class EtreVivant {
         this.age = age;
     }
 
-            
 }
