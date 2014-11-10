@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package simstama;
+import java.util.LinkedList;
 
 /**
  *
@@ -20,6 +21,10 @@ public class EtreVivant {
     private EtreVivant pere;
     private EtreVivant mere;
     private int statutEtat;
+    private String position;
+    private LinkedList<Relationnelle> ListContact = new LinkedList<Relationnelle>();
+    public static int id = 0;
+    private int monId;
 
    
     private int jaugeGentillesse;
@@ -31,6 +36,7 @@ public class EtreVivant {
     private int jaugeForce;
     private int jaugeCharme;
     private int jaugeAbilite;
+    private int jaugeRelationnelle;
     private int statutLiberte;
     private int random;
 
@@ -51,8 +57,13 @@ public class EtreVivant {
         jaugeForce = 0;
         jaugeCharme = 5;
         jaugeAbilite = 0;
+        jaugeRelationnelle = 0;
         this.statutEtat = 1;
         this.age = 0;
+        position = "maison";
+        this.monId = id;
+        id++;
+        
 
     }
 
@@ -71,6 +82,9 @@ public class EtreVivant {
         this.statutLiberte = 0;
         this.statutEtat = 1;
         this.age = 0;
+        position = "maison";
+        this.monId = id;
+        id++;
     }
 
     public EtreVivant() {
@@ -130,6 +144,7 @@ public class EtreVivant {
             bebe.age = 0;
             bebe.pere = this;
             bebe.mere = this.compagnon;
+            position = mere.position;
             random = (int)(Math.random()*2);
             if (random == 0){
                bebe.sexe="male"; 
@@ -144,6 +159,7 @@ public class EtreVivant {
             bebe.pere = this.compagnon;
             bebe.mere = this;
             bebe.age = 0;
+            position = mere.position;
             random = (int)(Math.random()*2);
             if (random == 0){
                bebe.sexe="male"; 
@@ -152,12 +168,7 @@ public class EtreVivant {
                 bebe.sexe="femelle";
             }
             return bebe;
-        }
-        
-        
-
-
-        
+        }     
     }
 
 
@@ -183,25 +194,43 @@ public class EtreVivant {
 
     }
 
-    public void seDeplacer( String lieu) { // a modifier String lieu en Lieu lieu quand la classe existera
-
+    public void seDeplacer( Lieux lieu) { // a modifier String lieu en Lieu lieu quand la classe existera
+        if (lieu != null){
+            position = lieu.getNom();
+        }
     }
 
     public void seduire( EtreVivant personne) {
         // plus compliqué car faut que se soit une jauge par personne
+        for(int i = 0; i < ListContact.size(); i++){
+            if(ListContact.get(i).id == personne.monId){
+                
+            }
+        }
+        
+        
     }
 
     public void communiquer( EtreVivant personne) {
-        jaugeHumeur++;
+        if (jaugeHumeur < 10){
+             jaugeHumeur++;
+        }
+       
     }
 
     public void apprendre() {
-        jaugeIntelligence++;
+        if (jaugeIntelligence < 10){
+            jaugeIntelligence++;
+        }
+        
 
     }
 
     public void seFaireBeau() {
-        jaugeHumeur++;
+        if (jaugeHumeur < 10){
+            jaugeHumeur++;
+        }
+        
     }
 
     public void acheter( String objet) {  // remplacer String par Objet quand la classe existera
