@@ -67,8 +67,14 @@ public class SimsTama{
         }
         
         
+<<<<<<< HEAD
+=======
+        */
+        MonJeu jeu=new MonJeu();
+>>>>>>> dab0caa908c3880b213a159d93306614376e9f39
         
-        Jeu.Menu();
+        jeu.Menu();
+     
                 }   
 }
 

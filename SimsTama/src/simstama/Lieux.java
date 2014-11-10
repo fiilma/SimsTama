@@ -17,7 +17,7 @@ public class Lieux {
     //Methodes
     
     
-    public static void menuJeu(){
+    public static void menuJeu(Tamagoshi monTama){
           /*
             * Switch
      * 1/ Quitter 
@@ -31,7 +31,7 @@ public class Lieux {
     
          //On écrit le menu 
         Scanner entree = new Scanner(System.in);
-        System.out.println("1- Aller vers\n2- Jauges\n3- Objets\n4- Sauvegarder\n5- Charger\n6- Quitter");
+        System.out.println("1- Aller vers\n2- Informations\n3- Objets\n4- Sauvegarder\n5- Charger\n6- Quitter");
         
        //Demande du choix
         int monEntree = entree.nextInt();
@@ -40,21 +40,23 @@ public class Lieux {
         
         switch (monEntree) {
             case 1:
-
+                 monTama.changerLieux();
+                
                 break;
 
             case 2:
-                //Ouvre fichiers sauvegardes
+                monTama.afficherInformations();
                 break;
 
             case 3:
-
-                System.exit(0);
+                //monTama.afficherObjets();
+                
                 break;
 
+        
             default:
                 
-                menuJeu();
+                menuJeu(monTama);
   
     }
     }
