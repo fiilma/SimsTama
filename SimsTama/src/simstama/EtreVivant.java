@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package simstama;
+
 import java.util.LinkedList;
 
 /**
@@ -17,18 +18,13 @@ public class EtreVivant {
     private int age;
     private String couleur;
     private String statutMatrimonial = "célibataire";
-
     private EtreVivant pere;
     private EtreVivant mere;
     private int statutEtat;
-
     public LinkedList<Relationnelle> ListContact = new LinkedList<Relationnelle>();
-
     public Lieux position;
-
     public static int id = 0;
     private int monId;
-
     private int jaugeGentillesse;
     private int jaugeProprete;
     private int jaugeFaim;
@@ -40,7 +36,6 @@ public class EtreVivant {
     private int jaugeAbilite;
     private int statutLiberte;
     private int random;
-
     private EtreVivant compagnon;
 
     //********* Constructeurs *********//
@@ -61,11 +56,11 @@ public class EtreVivant {
         this.statutEtat = 1;
         this.age = 0;
 
-       // position = "maison";
+        // position = "maison";
 
         this.monId = id;
         id++;
-        
+
 
     }
 
@@ -148,14 +143,13 @@ public class EtreVivant {
             bebe.mere = this.compagnon;
 
 
-            position = mere.position;
+            //   position = mere.position;
 
-            random = (int)(Math.random()*2);
-            if (random == 0){
-               bebe.sexe="male"; 
-            }
-            else{
-                bebe.sexe="femelle";
+            random = (int) (Math.random() * 2);
+            if (random == 0) {
+                bebe.sexe = "male";
+            } else {
+                bebe.sexe = "femelle";
 
             }
             return bebe;
@@ -165,17 +159,16 @@ public class EtreVivant {
             bebe.mere = this;
             bebe.age = 0;
 
-            position = mere.position;
+            // position = mere.position;
 
-            random = (int)(Math.random()*2);
-            if (random == 0){
-               bebe.sexe="male"; 
-            }
-            else{
-                bebe.sexe="femelle";
+            random = (int) (Math.random() * 2);
+            if (random == 0) {
+                bebe.sexe = "male";
+            } else {
+                bebe.sexe = "femelle";
             }
             return bebe;
-        }     
+        }
 
     }
 
@@ -200,80 +193,87 @@ public class EtreVivant {
 
     }
 
-
-    public void seDeplacer( Lieux lieu) { // a modifier String lieu en Lieu lieu quand la classe existera
-        if (lieu != null){
+    public void seDeplacer(Lieux lieu) { // a modifier String lieu en Lieu lieu quand la classe existera
+        if (lieu != null) {
             position = lieu;
         }
 
     }
 
-    public void seduire( EtreVivant personne) {
-       
-        int monCounter = 0;
-        int personneCounter = 0;
+    public void seduire(EtreVivant personne) {
+
+
         int i = 0;
         int j = 0;
-        //for(int i = 0; i < ListContact.size(); i++){
-        if(ListContact.size()!=0){
-            while(i < ListContact.size() +1 || ListContact.get(i).getId()!=personne.monId){
-                System.out.println("i="+i);
-                if(ListContact.get(i) != null){
-                if(ListContact.get(i).getId() == personne.monId){
-                    ListContact.get(i).setJaugeRelationnelle(ListContact.get(i).getJaugeRelationnelle()+1);
-                    
-                    
-                    if(personne.ListContact.size()!=0){
-                    //for(int j = 0; j< personne.ListContact.size();j++){
-                        while(j < personne.ListContact.size() +1 || personne.ListContact.get(i).getId()!=monId){
-                            if ( personne.ListContact.get(j) != null){
-                            if(personne.ListContact.get(j).getId() == monId){
-                                personne.ListContact.get(j).setJaugeRelationnelle(personne.ListContact.get(j).getJaugeRelationnelle()+1);
-                                
+        boolean testMaList = false;
+        boolean testListPersonne = false;
+        
+
+        if (ListContact.size() != 0) {
+            while (i < ListContact.size()) {
+
+                if (ListContact.get(i) != null) {
+                    if (ListContact.get(i).getId() == personne.monId) {
+                        ListContact.get(i).setJaugeRelationnelle(ListContact.get(i).getJaugeRelationnelle() + 1);
+                        testMaList = true;
+
+                        if (personne.ListContact.size() != 0) {
+                            while (j < personne.ListContact.size() || personne.ListContact.get(i).getId() != monId) {
+                                if (personne.ListContact.get(j) != null) {
+                                    if (personne.ListContact.get(j).getId() == monId) {
+                                        personne.ListContact.get(j).setJaugeRelationnelle(personne.ListContact.get(j).getJaugeRelationnelle() + 1);
+                                        testListPersonne = true;
+                                    }
+                                }
+                                j++;
                             }
-                            }
-                            j++;
-                            personneCounter++;
+                        } else {
+                            personne.ListContact.add(new Relationnelle(monId));
                         }
+
                     }
-                    else{
-                         personne.ListContact.add(new Relationnelle(monId));
-                    }
-                    
-                }
                 }
                 i++;
-                monCounter++;
+                // monCounter++;
             }
+            if (testMaList == false) {
+                ListContact.add(new Relationnelle(personne.monId));
+            }
+            if (testListPersonne == false) {
+                personne.ListContact.add(new Relationnelle(monId));
+            }
+        } else {
+            ListContact.add(new Relationnelle(personne.monId));
         }
-    }
-    
 
-    public void communiquer( EtreVivant personne) {
-        if (jaugeHumeur < 10){
-             jaugeHumeur++;
+
+
+    }
+
+    public void communiquer(EtreVivant personne) {
+        if (jaugeHumeur < 10) {
+            jaugeHumeur++;
         }
-       
+
 
     }
 
     public void apprendre() {
-        if (jaugeIntelligence < 10){
+        if (jaugeIntelligence < 10) {
             jaugeIntelligence++;
         }
-        
+
 
     }
 
     public void seFaireBeau() {
-        if (jaugeHumeur < 10){
+        if (jaugeHumeur < 10) {
             jaugeHumeur++;
         }
-        
+
     }
 
     public void acheter(String objet) {  // remplacer String par Objet quand la classe existera
-
     }
 
     public void divorcer(EtreVivant personne) {
@@ -282,7 +282,6 @@ public class EtreVivant {
     }
 
     public void seBattre(EtreVivant personne) {
-
     }
 
     public void allerAuxToilettes() {
@@ -295,16 +294,16 @@ public class EtreVivant {
         System.out.println("prénom : " + this.prenom);
         System.out.println("age : " + this.age);
 
-        System.out.println("Abilité "+this.jaugeAbilite+" /10");
-        System.out.println("Charme "+this.jaugeCharme+" /10");
-        System.out.println("Force "+this.jaugeForce+" /10");
-        System.out.println("Intelligence "+this.jaugeIntelligence+" /10");
-        System.out.println("Gentillesse "+this.jaugeGentillesse+" /10");
+        System.out.println("Abilité " + this.jaugeAbilite + " /10");
+        System.out.println("Charme " + this.jaugeCharme + " /10");
+        System.out.println("Force " + this.jaugeForce + " /10");
+        System.out.println("Intelligence " + this.jaugeIntelligence + " /10");
+        System.out.println("Gentillesse " + this.jaugeGentillesse + " /10");
 
-        System.out.println("Fatigue "+this.jaugeFatigue+" /10");
-        System.out.println("Humeur "+this.jaugeHumeur+" /10");
-        System.out.println("Propreté "+this.jaugeProprete+" /10");
-        System.out.println("Faim "+this.jaugeFaim+" /10");
+        System.out.println("Fatigue " + this.jaugeFatigue + " /10");
+        System.out.println("Humeur " + this.jaugeHumeur + " /10");
+        System.out.println("Propreté " + this.jaugeProprete + " /10");
+        System.out.println("Faim " + this.jaugeFaim + " /10");
 
     }
 
@@ -458,5 +457,4 @@ public class EtreVivant {
     public void setCompagnon(EtreVivant compagnon) {
         this.compagnon = compagnon;
     }
-
 }
