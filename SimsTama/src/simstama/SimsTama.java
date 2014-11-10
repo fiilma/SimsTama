@@ -15,9 +15,9 @@ public class SimsTama{
     
     public static void main(String[] args) {
         
-        /*EtreHumain monHumain= new EtreHumain("roumi","seb","truc","Bleu","Noir","Magicien");
+       // EtreHumain monHumain= new EtreHumain("roumi","seb","truc","Bleu","Noir","Magicien");
         
-        System.out.println(monHumain.getNom()+monHumain.getPrenom());
+       // System.out.println(monHumain.getNom()+monHumain.getPrenom());
               
         EtreVivant boby = new EtreVivant("blaise", "boby", "male");
         EtreVivant biby = new EtreVivant("booo", "biby", "femelle");
@@ -53,10 +53,20 @@ public class SimsTama{
         System.out.println(buby.getPrenom());
         System.out.println(buby.getNom());
         System.out.println(buby.getSexe());
-        biby.mourir();
+       // biby.mourir();
         System.out.println(boby.getStatusMatrimonial());
+        for(int i=0 ; i < boby.ListContact.size() ; i++){
+            System.out.println(boby.ListContact.get(i).getId());
+            System.out.println(boby.ListContact.get(i).getJaugeRelationnelle());
+        }
+        boby.seduire(biby);
+        boby.seduire(buby);
+        for(int i=0 ; i < boby.ListContact.size(); i++){
+            System.out.println(boby.ListContact.get(i).getId());
+            System.out.println(boby.ListContact.get(i).getJaugeRelationnelle());
+        }
         
-        */
+        
         
         Jeu.Menu();
                 }   

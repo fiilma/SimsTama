@@ -9,8 +9,14 @@ package simstama;
  * @author isen
  */
 public class Relationnelle {
+    
+    
     private int id;
-    private int jaugeRelationnelle;
+    private int jaugeRelationnelle = 1;
+    
+    public Relationnelle(int id){
+        this.id = id;
+    }
 
     /**
      * @return the id
