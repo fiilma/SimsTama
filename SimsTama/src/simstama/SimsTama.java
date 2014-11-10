@@ -57,8 +57,10 @@ public class SimsTama{
         System.out.println(boby.getStatusMatrimonial());
         
         */
+        MonJeu jeu=new MonJeu();
         
-        Jeu.Menu();
+        jeu.Menu();
+     
                 }   
 }
 
