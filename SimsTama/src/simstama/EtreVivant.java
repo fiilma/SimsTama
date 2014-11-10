@@ -21,13 +21,11 @@ public class EtreVivant {
     private EtreVivant pere;
     private EtreVivant mere;
     private int statutEtat;
-<<<<<<< HEAD
-    private Lieux position;
+
     public LinkedList<Relationnelle> ListContact = new LinkedList<Relationnelle>();
-=======
+
     public Lieux position;
-    private LinkedList<Relationnelle> ListContact = new LinkedList<Relationnelle>();
->>>>>>> dab0caa908c3880b213a159d93306614376e9f39
+
     public static int id = 0;
     private int monId;
 
@@ -62,11 +60,9 @@ public class EtreVivant {
         jaugeAbilite = 0;
         this.statutEtat = 1;
         this.age = 0;
-<<<<<<< HEAD
+
        // position = "maison";
-=======
-        
->>>>>>> dab0caa908c3880b213a159d93306614376e9f39
+
         this.monId = id;
         id++;
         
@@ -88,11 +84,9 @@ public class EtreVivant {
         this.statutLiberte = 0;
         this.statutEtat = 1;
         this.age = 0;
-<<<<<<< HEAD
+
         //position = "maison";
-=======
-    
->>>>>>> dab0caa908c3880b213a159d93306614376e9f39
+
         this.monId = id;
         id++;
     }
@@ -152,12 +146,10 @@ public class EtreVivant {
             bebe.age = 0;
             bebe.pere = this;
             bebe.mere = this.compagnon;
-<<<<<<< HEAD
-            //position = mere.position;
-=======
+
 
             position = mere.position;
->>>>>>> dab0caa908c3880b213a159d93306614376e9f39
+
             random = (int)(Math.random()*2);
             if (random == 0){
                bebe.sexe="male"; 
@@ -172,12 +164,9 @@ public class EtreVivant {
             bebe.pere = this.compagnon;
             bebe.mere = this;
             bebe.age = 0;
-<<<<<<< HEAD
-            //position = mere.position;
-=======
 
             position = mere.position;
->>>>>>> dab0caa908c3880b213a159d93306614376e9f39
+
             random = (int)(Math.random()*2);
             if (random == 0){
                bebe.sexe="male"; 
@@ -192,13 +181,10 @@ public class EtreVivant {
 
     public String donnerNom() {
 
-<<<<<<< HEAD
-        String prenom = "buby";
-       //Ici on entre un nom et on le donne à la personne
-=======
+
         String prenom = "";
         //Ici on entre un nom et on le donne à la personne
->>>>>>> dab0caa908c3880b213a159d93306614376e9f39
+
 
         return prenom;
     }
@@ -222,7 +208,6 @@ public class EtreVivant {
 
     }
 
-<<<<<<< HEAD
     public void seduire( EtreVivant personne) {
        
         int monCounter = 0;
@@ -259,35 +244,10 @@ public class EtreVivant {
                 }
                 i++;
                 monCounter++;
-=======
-    /*public void seduire(EtreVivant personne) {
-        // plus compliqué car faut que se soit une jauge par personne
-        for(int i = 0; i < ListContact.size(); i++){
-            if(ListContact.get(i).id == personne.monId){
-                
->>>>>>> dab0caa908c3880b213a159d93306614376e9f39
             }
-            
         }
-        else{
-           ListContact.add(new Relationnelle(personne.monId)); 
-        }
-        if(ListContact.get(monCounter).equals(null)){
-            
-            ListContact.add(new Relationnelle(personne.monId));
-            
-                    
-        }
-        if(personne.ListContact.size() == 0 ){
-            personne.ListContact.add(new Relationnelle(monId));
-        }
-        else if(personne.ListContact.get(personneCounter).equals(null)){
-            personne.ListContact.add(new Relationnelle(monId));
-        }
-        
-        
     }
-*/
+    
 
     public void communiquer( EtreVivant personne) {
         if (jaugeHumeur < 10){

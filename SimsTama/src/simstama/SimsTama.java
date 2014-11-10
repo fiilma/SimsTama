@@ -54,7 +54,7 @@ public class SimsTama{
         System.out.println(buby.getNom());
         System.out.println(buby.getSexe());
        // biby.mourir();
-        System.out.println(boby.getStatusMatrimonial());
+       /* System.out.println(boby.getStatusMatrimonial());
         for(int i=0 ; i < boby.ListContact.size() ; i++){
             System.out.println(boby.ListContact.get(i).getId());
             System.out.println(boby.ListContact.get(i).getJaugeRelationnelle());
@@ -65,15 +65,13 @@ public class SimsTama{
             System.out.println(boby.ListContact.get(i).getId());
             System.out.println(boby.ListContact.get(i).getJaugeRelationnelle());
         }
-        
-        
-<<<<<<< HEAD
-=======
         */
+
+        /*
         MonJeu jeu=new MonJeu();
->>>>>>> dab0caa908c3880b213a159d93306614376e9f39
+
         
-        jeu.Menu();
+        jeu.Menu();*/
      
                 }   
 }
