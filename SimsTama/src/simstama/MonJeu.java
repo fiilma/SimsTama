@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class MonJeu {
 
     //***************Variables******************//
-    public Scanner monEntree=new Scanner(System.in);
+ //   public Scanner monEntree=new Scanner(System.in);
     
     
     //***************Methodes*******************// 
@@ -21,7 +21,8 @@ public class MonJeu {
     public void Menu() {
 
         //On écrit le menu 
-
+    Scanner monEntree=new Scanner(System.in);
+    
         System.out.println("1- Jouer \n2- Continuer\n3- Quitter");
                
        //Demande du choix
@@ -74,16 +75,21 @@ public class MonJeu {
 
     //Création d'un tama 
     public  Tamagoshi creationTama() {
-      Tamagoshi monTama=new Tamagoshi();
+  
+         Scanner monEntree=new Scanner(System.in);
+    
+        Tamagoshi monTama=new Tamagoshi();
       
       System.out.println("Bonjour, vous êtes chez les SimsTama !");
       System.out.println("Vous allez créer votre Tama maintenant ! ");
       
-      System.out.println("Nom:");
-      monTama.setNom(monEntree.nextLine());
+     System.out.println("Nom:");
+      
+     monTama.setNom(monEntree.nextLine());
     
       System.out.println("Prénom:");
-      monTama.setPreom(monEntree.nextLine());
+      String prenom=monEntree.nextLine();
+      monTama.setPreom(prenom);
       
       System.out.println("Sexe:");
       monTama.setSexe(monEntree.nextLine());
