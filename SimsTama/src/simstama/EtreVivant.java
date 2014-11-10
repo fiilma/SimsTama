@@ -21,7 +21,6 @@ public class EtreVivant {
     private EtreVivant mere;
     private int statutEtat;
 
-   
     private int jaugeGentillesse;
     private int jaugeProprete;
     private int jaugeFaim;
@@ -99,7 +98,6 @@ public class EtreVivant {
         jaugeProprete = 10;
     }
 
-
     public void seMarier(EtreVivant personne) {
         if (personne != null) {
 
@@ -121,77 +119,65 @@ public class EtreVivant {
         }
     }
 
-   
     public EtreVivant faireUnBebe() {
 
-         String prenom = donnerNom();
-        if(sexe.equals("male")){
+        String prenom = donnerNom();
+        if (sexe.equals("male")) {
             EtreVivant bebe = new EtreVivant(this.nom, prenom);
             bebe.age = 0;
             bebe.pere = this;
             bebe.mere = this.compagnon;
-            random = (int)(Math.random()*2);
-            if (random == 0){
-               bebe.sexe="male"; 
-            }
-            else{
-                bebe.sexe="femelle";
+            random = (int) (Math.random() * 2);
+            if (random == 0) {
+                bebe.sexe = "male";
+            } else {
+                bebe.sexe = "femelle";
             }
             return bebe;
-        }
-        else{
+        } else {
             EtreVivant bebe = new EtreVivant(this.compagnon.nom, prenom);
             bebe.pere = this.compagnon;
             bebe.mere = this;
             bebe.age = 0;
-            random = (int)(Math.random()*2);
-            if (random == 0){
-               bebe.sexe="male"; 
-            }
-            else{
-                bebe.sexe="femelle";
+            random = (int) (Math.random() * 2);
+            if (random == 0) {
+                bebe.sexe = "male";
+            } else {
+                bebe.sexe = "femelle";
             }
             return bebe;
         }
-        
-        
 
-
-        
     }
-
 
     public String donnerNom() {
 
         String prenom = "";
-       //Ici on entre un nom et on le donne à la personne
+        //Ici on entre un nom et on le donne à la personne
 
         return prenom;
     }
 
-    
-
     public void mourir() {
         statutEtat = 0;
-        System.out.println("repose en paix "+ prenom+ " " + nom);
-        if (this.compagnon.sexe.equals("femelle")){
+        System.out.println("repose en paix " + prenom + " " + nom);
+        if (this.compagnon.sexe.equals("femelle")) {
             this.compagnon.statutMatrimonial = "veuve";
-        }
-        else{
+        } else {
             this.compagnon.statutMatrimonial = "veuf";
         }
 
     }
 
-    public void seDeplacer( String lieu) { // a modifier String lieu en Lieu lieu quand la classe existera
+    public void seDeplacer(String lieu) { // a modifier String lieu en Lieu lieu quand la classe existera
 
     }
 
-    public void seduire( EtreVivant personne) {
+    public void seduire(EtreVivant personne) {
         // plus compliqué car faut que se soit une jauge par personne
     }
 
-    public void communiquer( EtreVivant personne) {
+    public void communiquer(EtreVivant personne) {
         jaugeHumeur++;
     }
 
@@ -204,21 +190,40 @@ public class EtreVivant {
         jaugeHumeur++;
     }
 
-    public void acheter( String objet) {  // remplacer String par Objet quand la classe existera
+    public void acheter(String objet) {  // remplacer String par Objet quand la classe existera
 
     }
 
-    public void divorcer( EtreVivant personne) {
+    public void divorcer(EtreVivant personne) {
         this.compagnon.statutMatrimonial = "célibataire";
         statutMatrimonial = "célibataire";
     }
 
-    public void seBattre( EtreVivant personne) {
+    public void seBattre(EtreVivant personne) {
 
     }
 
     public void allerAuxToilettes() {
         this.jaugeProprete += 2;
+    }
+
+    public void afficherInformations() {
+
+        System.out.println("nom : " + this.nom);
+        System.out.println("prénom : " + this.prenom);
+        System.out.println("age : " + this.age);
+
+        System.out.println("Abilité "+this.jaugeAbilite+" /10");
+        System.out.println("Charme "+this.jaugeCharme+" /10");
+        System.out.println("Force "+this.jaugeForce+" /10");
+        System.out.println("Intelligence "+this.jaugeIntelligence+" /10");
+        System.out.println("Gentillesse "+this.jaugeGentillesse+" /10");
+
+        System.out.println("Fatigue "+this.jaugeFatigue+" /10");
+        System.out.println("Humeur "+this.jaugeHumeur+" /10");
+        System.out.println("Propreté "+this.jaugeProprete+" /10");
+        System.out.println("Faim "+this.jaugeFaim+" /10");
+
     }
 
     //************ GET et SET ***************//
@@ -342,7 +347,6 @@ public class EtreVivant {
 
     }
 
-
     public String getPrenom() {
         return prenom;
     }
@@ -351,7 +355,6 @@ public class EtreVivant {
         this.prenom = prenom;
 
     }
-
 
     public String getSexe() {
         return sexe;
@@ -362,7 +365,6 @@ public class EtreVivant {
 
     }
 
-
     public void setAge(int age) {
         this.age = age;
     }
@@ -371,11 +373,8 @@ public class EtreVivant {
         return compagnon;
     }
 
-
     public void setCompagnon(EtreVivant compagnon) {
         this.compagnon = compagnon;
     }
-
-            
 
 }
