@@ -15,7 +15,7 @@ public class SimsTama{
     
     public static void main(String[] args) {
         
-        EtreHumain monHumain= new EtreHumain("roumi","seb","truc","Bleu","Noir","Magicien");
+        /*EtreHumain monHumain= new EtreHumain("roumi","seb","truc","Bleu","Noir","Magicien");
         
         System.out.println(monHumain.getNom()+monHumain.getPrenom());
               
@@ -56,7 +56,9 @@ public class SimsTama{
         biby.mourir();
         System.out.println(boby.getStatusMatrimonial());
         
+        */
         
+        Jeu.Menu();
                 }   
 }
 
