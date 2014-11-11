@@ -6,7 +6,7 @@
 package simstama;
 
 import fr.personnage.EtreVivant;
-
+import fr.gestion.jeu.MonJeu;
 
 
 /**
@@ -20,7 +20,7 @@ public class SimsTama {
         // EtreHumain monHumain= new EtreHumain("roumi","seb","truc","Bleu","Noir","Magicien");
 
         // System.out.println(monHumain.getNom()+monHumain.getPrenom());
-
+/*
         EtreVivant boby = new EtreVivant("blaise", "boby", "male");
         EtreVivant biby = new EtreVivant("booo", "biby", "femelle");
         boby.feterSonAnniversaire();
@@ -85,11 +85,11 @@ public class SimsTama {
             System.out.println(buby.ListContact.get(i).getJaugeRelationnelle());
             
         }
-        /*
+        /**/
          MonJeu jeu=new MonJeu();
 
         
-         jeu.Menu();*/
+         jeu.Menu();
 
     }
 }
@@ -105,6 +105,11 @@ public class SimsTama {
  * faire un bebe
  * mourir
  * *seduire
+
+
+-Classe métier = classe abtraite
+-création de différents packages
+
 
 
 

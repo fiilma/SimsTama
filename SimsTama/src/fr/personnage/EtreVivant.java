@@ -61,9 +61,20 @@ public class EtreVivant {
     }
 
     public EtreVivant() {
+         this.statutLiberte = 0;
+        this.statutEtat = 1;
+        this.age = 0;
+
+        // position = "maison";
+
+        this.monId = id;
+        id++;
+
+        
     }
 
     //******** Methodes de la classe *******//
+ 
     public void feterSonAnniversaire() {
         this.age++;
         System.out.println("joyeux anniversaire " + prenom);
@@ -224,7 +235,9 @@ public class EtreVivant {
         System.out.println("nom : " + this.nom);
         System.out.println("prénom : " + this.prenom);
         System.out.println("age : " + this.age);
-
+        System.out.println("sexe : "+this.sexe);
+        System.out.println("Position :"+this.position.getNom());
+/*
         System.out.println("Abilité " + mesJauges.getJaugeAbilite() + " /10");
         System.out.println("Charme " + mesJauges.getJaugeCharme() + " /10");
         System.out.println("Force " + mesJauges.getJaugeForce() + " /10");
@@ -234,6 +247,7 @@ public class EtreVivant {
         System.out.println("Fatigue " + mesJauges.getJaugeFatigue() + " /10");
         System.out.println("Humeur " + mesJauges.getJaugeProprete() + " /10");
         System.out.println("Faim " + mesJauges.getJaugeFaim() + " /10");
+        */
 
     }
 

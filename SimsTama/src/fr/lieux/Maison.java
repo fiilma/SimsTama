@@ -5,7 +5,6 @@
  */
 package fr.lieux;
 
-import fr.lieux.Lieux;
 
 /**
  *

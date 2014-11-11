@@ -5,7 +5,7 @@
  */
 package fr.metier;
 
-import fr.metier.Metier;
+
 import fr.personnage.EtreVivant;
 
 /**
@@ -25,7 +25,11 @@ public class Policier extends Metier {
     public Policier(){}
     
     //***** Methode*****//
+   public void travailler(){
     
+    System.out.println("Je vais surveiller la ville !");
+    
+    }
     private void arreterPersonne(EtreVivant personne){
     
     personne.setStatutLiberte(1);

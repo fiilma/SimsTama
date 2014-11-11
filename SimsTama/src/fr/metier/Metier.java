@@ -9,21 +9,21 @@ package fr.metier;
  *
  * @author roumi
  */
-public class Metier {
+public abstract class Metier {
     
     
     
     /**** Variables *****/
     
-    private String nomMetier;
+   protected String nomMetier;
     
     /**** Get/Set ******/
-   public void setNom(String nom){
+   protected void setNom(String nom){
    
    this.nomMetier=nom;
    }
     
-   public String getNom(){
+   protected String getNom(){
    
    return this.nomMetier;
    }
@@ -36,6 +36,13 @@ public class Metier {
    this.nomMetier=nom;
    }
  
-   public Metier(){};
+   public Metier(){
+   
+   };
+   
+    
+   //***** Methode ******//
+   
+   abstract void travailler();
    
 }
