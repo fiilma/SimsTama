@@ -1,4 +1,6 @@
-package simstama;
+package fr.personnage;
+
+import fr.lieux.Lieux;
 
 /**
  *

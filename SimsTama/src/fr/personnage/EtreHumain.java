@@ -2,7 +2,7 @@
 Classe Etre humain.
 
  */
-package simstama;
+package fr.personnage;
 
 /**
  *

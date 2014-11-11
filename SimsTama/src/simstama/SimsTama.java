@@ -5,6 +5,10 @@
  */
 package simstama;
 
+import fr.personnage.EtreVivant;
+
+
+
 /**
  *
  * @authors Nicolas Blaise Roumaissa Boussellaoui

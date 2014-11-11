@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package simstama;
+package fr.metier;
+
+import fr.metier.Metier;
+import fr.personnage.EtreVivant;
 
 /**
  *

@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package simstama;
+package fr.gestion.jeu;
 
 import java.util.Scanner;
+import fr.lieux.Lieux;
+import fr.personnage.Tamagoshi;
 /**
  *
  * @author roumi
@@ -89,7 +91,7 @@ public class MonJeu {
     
       System.out.println("Prénom:");
       String prenom=monEntree.nextLine();
-      monTama.setPreom(prenom);
+      monTama.setPrenom(prenom);
       
       System.out.println("Sexe:");
       monTama.setSexe(monEntree.nextLine());

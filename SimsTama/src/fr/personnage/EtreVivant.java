@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package simstama;
+package fr.personnage;
 
+import fr.lieux.Lieux;
 import java.util.LinkedList;
 
 /**
@@ -28,7 +29,7 @@ public class EtreVivant {
     private int statutLiberte;
     private int random;
     private EtreVivant compagnon;
-    Jauge mesJauges = new Jauge();
+    public Jauge mesJauges = new Jauge();
 
     //********* Constructeurs *********//
     public EtreVivant(String nom, String prenom, String sexe) {
