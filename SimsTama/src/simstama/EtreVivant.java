@@ -218,7 +218,7 @@ public class EtreVivant {
                         testMaList = true;
 
                         if (personne.ListContact.size() != 0) {
-                            while (j < personne.ListContact.size() || personne.ListContact.get(i).getId() != monId) {
+                            while (j < personne.ListContact.size() ) {
                                 if (personne.ListContact.get(j) != null) {
                                     if (personne.ListContact.get(j).getId() == monId) {
                                         personne.ListContact.get(j).setJaugeRelationnelle(personne.ListContact.get(j).getJaugeRelationnelle() + 1);
@@ -244,6 +244,7 @@ public class EtreVivant {
             }
         } else {
             ListContact.add(new Relationnelle(personne.monId));
+            personne.ListContact.add(new Relationnelle(monId));
         }
 
 
