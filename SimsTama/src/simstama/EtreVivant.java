@@ -25,18 +25,10 @@ public class EtreVivant {
     public Lieux position;
     public static int id = 0;
     private int monId;
-    private int jaugeGentillesse;
-    private int jaugeProprete;
-    private int jaugeFaim;
-    private int jaugeHumeur;
-    private int jaugeFatigue;
-    private int jaugeIntelligence;
-    private int jaugeForce;
-    private int jaugeCharme;
-    private int jaugeAbilite;
     private int statutLiberte;
     private int random;
     private EtreVivant compagnon;
+    Jauge mesJauges = new Jauge();
 
     //********* Constructeurs *********//
     public EtreVivant(String nom, String prenom, String sexe) {
@@ -44,15 +36,6 @@ public class EtreVivant {
         this.nom = nom;
         this.sexe = sexe;
         this.statutLiberte = 0;
-        jaugeGentillesse = 5;
-        jaugeProprete = 10;
-        jaugeFaim = 10;
-        jaugeHumeur = 5;
-        jaugeFatigue = 10;
-        jaugeIntelligence = 0;
-        jaugeForce = 0;
-        jaugeCharme = 5;
-        jaugeAbilite = 0;
         this.statutEtat = 1;
         this.age = 0;
 
@@ -67,19 +50,9 @@ public class EtreVivant {
     public EtreVivant(String nom, String prenom) {
         this.prenom = prenom;
         this.nom = nom;
-        jaugeGentillesse = 5;
-        jaugeProprete = 10;
-        jaugeFaim = 10;
-        jaugeHumeur = 5;
-        jaugeFatigue = 10;
-        jaugeIntelligence = 0;
-        jaugeForce = 0;
-        jaugeCharme = 5;
-        jaugeAbilite = 0;
         this.statutLiberte = 0;
         this.statutEtat = 1;
         this.age = 0;
-
         //position = "maison";
 
         this.monId = id;
@@ -93,23 +66,6 @@ public class EtreVivant {
     public void feterSonAnniversaire() {
         this.age++;
         System.out.println("joyeux anniversaire " + prenom);
-    }
-
-    public void manger() {
-
-        //Pour plus tard proposer differents trucs et augmenter de differents points la jauge
-        jaugeFaim = 10;
-    }
-
-    public void boire() {
-        if (jaugeFaim < 10) {
-            jaugeFaim++;
-        }
-
-    }
-
-    public void seLaver() {
-        jaugeProprete = 10;
     }
 
     public void seMarier(EtreVivant personne) {
@@ -207,7 +163,7 @@ public class EtreVivant {
         int j = 0;
         boolean testMaList = false;
         boolean testListPersonne = false;
-        
+
 
         if (ListContact.size() != 0) {
             while (i < ListContact.size()) {
@@ -218,7 +174,7 @@ public class EtreVivant {
                         testMaList = true;
 
                         if (personne.ListContact.size() != 0) {
-                            while (j < personne.ListContact.size() ) {
+                            while (j < personne.ListContact.size()) {
                                 if (personne.ListContact.get(j) != null) {
                                     if (personne.ListContact.get(j).getId() == monId) {
                                         personne.ListContact.get(j).setJaugeRelationnelle(personne.ListContact.get(j).getJaugeRelationnelle() + 1);
@@ -251,29 +207,6 @@ public class EtreVivant {
 
     }
 
-    public void communiquer(EtreVivant personne) {
-        if (jaugeHumeur < 10) {
-            jaugeHumeur++;
-        }
-
-
-    }
-
-    public void apprendre() {
-        if (jaugeIntelligence < 10) {
-            jaugeIntelligence++;
-        }
-
-
-    }
-
-    public void seFaireBeau() {
-        if (jaugeHumeur < 10) {
-            jaugeHumeur++;
-        }
-
-    }
-
     public void acheter(String objet) {  // remplacer String par Objet quand la classe existera
     }
 
@@ -285,26 +218,62 @@ public class EtreVivant {
     public void seBattre(EtreVivant personne) {
     }
 
-    public void allerAuxToilettes() {
-        this.jaugeProprete += 2;
-    }
-
     public void afficherInformations() {
 
         System.out.println("nom : " + this.nom);
         System.out.println("prénom : " + this.prenom);
         System.out.println("age : " + this.age);
 
-        System.out.println("Abilité " + this.jaugeAbilite + " /10");
-        System.out.println("Charme " + this.jaugeCharme + " /10");
-        System.out.println("Force " + this.jaugeForce + " /10");
-        System.out.println("Intelligence " + this.jaugeIntelligence + " /10");
-        System.out.println("Gentillesse " + this.jaugeGentillesse + " /10");
+        System.out.println("Abilité " + mesJauges.getJaugeAbilite() + " /10");
+        System.out.println("Charme " + mesJauges.getJaugeCharme() + " /10");
+        System.out.println("Force " + mesJauges.getJaugeForce() + " /10");
+        System.out.println("Intelligence " + mesJauges.getJaugeIntelligence() + " /10");
+        System.out.println("Gentillesse " + mesJauges.getJaugeGentillesse() + " /10");
 
-        System.out.println("Fatigue " + this.jaugeFatigue + " /10");
-        System.out.println("Humeur " + this.jaugeHumeur + " /10");
-        System.out.println("Propreté " + this.jaugeProprete + " /10");
-        System.out.println("Faim " + this.jaugeFaim + " /10");
+        System.out.println("Fatigue " + mesJauges.getJaugeFatigue() + " /10");
+        System.out.println("Humeur " + mesJauges.getJaugeProprete() + " /10");
+        System.out.println("Faim " + mesJauges.getJaugeFaim() + " /10");
+
+    }
+
+    public void manger() {
+
+        //Pour plus tard proposer differents trucs et augmenter de differents points la jauge
+        mesJauges.setJaugeFaim(10) ;
+    }
+
+    public void boire() {
+        if (mesJauges.getJaugeFaim() < 10) {
+            mesJauges.setJaugeFaim(mesJauges.getJaugeFaim() + 1);
+        }
+
+    }
+
+    public void seLaver() {
+        mesJauges.setJaugeProprete(10);
+        
+    }
+
+    public void communiquer(EtreVivant personne) {
+        if (mesJauges.getJaugeHumeur() < 10) {
+            mesJauges.setJaugeHumeur(mesJauges.getJaugeHumeur() + 1);
+        }
+
+
+    }
+
+    public void apprendre() {
+        if (mesJauges.getJaugeIntelligence() < 10) {
+            mesJauges.setJaugeIntelligence(mesJauges.getJaugeIntelligence() + 1);
+        }
+
+
+    }
+
+    public void seFaireBeau() {
+        if (mesJauges.getJaugeHumeur() < 10) {
+            mesJauges.setJaugeHumeur(mesJauges.getJaugeHumeur() + 1);
+        }
 
     }
 
@@ -330,78 +299,6 @@ public class EtreVivant {
 
     public void setCouleur(String couleur) {
         this.couleur = couleur;
-    }
-
-    public int getJaugeGentillesse() {
-        return jaugeGentillesse;
-    }
-
-    public void setJaugeGentillesse(int jaugeGentillesse) {
-        this.jaugeGentillesse = jaugeGentillesse;
-    }
-
-    public int getJaugeProprete() {
-        return jaugeProprete;
-    }
-
-    public void setJaugeProprete(int jaugeProprete) {
-        this.jaugeProprete = jaugeProprete;
-    }
-
-    public int getJaugeFaim() {
-        return jaugeFaim;
-    }
-
-    public void setJaugeFaim(int jaugeFaim) {
-        this.jaugeFaim = jaugeFaim;
-    }
-
-    public int getJaugeHumeur() {
-        return jaugeHumeur;
-    }
-
-    public void setJaugeHumeur(int jaugeHumeur) {
-        this.jaugeHumeur = jaugeHumeur;
-    }
-
-    public int getJaugeFatigue() {
-        return jaugeFatigue;
-    }
-
-    public void setJaugeFatigue(int jaugeFatigue) {
-        this.jaugeFatigue = jaugeFatigue;
-    }
-
-    public int getJaugeIntelligence() {
-        return jaugeIntelligence;
-    }
-
-    public void setJaugeIntelligence(int jaugeIntelligence) {
-        this.jaugeIntelligence = jaugeIntelligence;
-    }
-
-    public int getJaugeForce() {
-        return jaugeForce;
-    }
-
-    public void setJaugeForce(int jaugeForce) {
-        this.jaugeForce = jaugeForce;
-    }
-
-    public int getJaugeCharme() {
-        return jaugeCharme;
-    }
-
-    public void setJaugeCharme(int jaugeCharme) {
-        this.jaugeCharme = jaugeCharme;
-    }
-
-    public int getJaugeAbilite() {
-        return jaugeAbilite;
-    }
-
-    public void setJaugeAbilite(int jaugeAbilite) {
-        this.jaugeAbilite = jaugeAbilite;
     }
 
     public String getStatusMatrimonial() {

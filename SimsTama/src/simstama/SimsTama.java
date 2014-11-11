@@ -23,16 +23,16 @@ public class SimsTama {
         biby.feterSonAnniversaire();
         System.out.println(boby.getPrenom() + " a " + boby.getAge() + " ans.");
         System.out.println(biby.getPrenom() + " a " + biby.getAge() + " ans.");
-        boby.setJaugeFaim(5);
-        System.out.println(boby.getJaugeFaim());
+        boby.mesJauges.setJaugeFaim(5);
+        System.out.println(boby.mesJauges.getJaugeFaim());
         boby.boire();
-        System.out.println(boby.getJaugeFaim());
+        System.out.println(boby.mesJauges.getJaugeFaim());
         boby.manger();
-        System.out.println(boby.getJaugeFaim());
-        boby.setJaugeProprete(5);
-        System.out.println(boby.getJaugeProprete());
+        System.out.println(boby.mesJauges.getJaugeFaim());
+        boby.mesJauges.setJaugeProprete(5);
+        System.out.println(boby.mesJauges.getJaugeProprete());
         boby.seLaver();
-        System.out.println(boby.getJaugeProprete());
+        System.out.println(boby.mesJauges.getJaugeProprete());
         System.out.println(biby.getStatusMatrimonial());
         boby.seMarier(biby);
         System.out.println(boby.getNom());
@@ -100,6 +100,7 @@ public class SimsTama {
  * se marier
  * faire un bebe
  * mourir
+ * *seduire
 
 
 
