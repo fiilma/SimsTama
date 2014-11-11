@@ -29,7 +29,24 @@ public class EtreVivant {
     private int statutLiberte;
     private int random;
     private EtreVivant compagnon;
-    public Jauge mesJauges = new Jauge();
+    /*jaugeGentillesse = 5;
+     jaugeProprete = 10;
+     jaugeFaim = 10;
+     jaugeHumeur = 5;
+     jaugeFatigue = 10;
+     jaugeIntelligence = 0;
+     jaugeForce = 0;
+     jaugeCharme = 5;
+     jaugeAbilite = 0;*/
+    private Jauge gentillesse = new Jauge("gentillesse", 10, 5);
+    private Jauge proprete = new Jauge("proprete", 10, 5);
+    private Jauge faim = new Jauge("faim", 10, 5);
+    private Jauge humeur = new Jauge("humeur", 10, 5);
+    private Jauge fatigue = new Jauge("fatigue", 10, 5);
+    private Jauge intelligence = new Jauge("intellgigence", 10, 5);
+    private Jauge force = new Jauge("force", 10, 5);
+    private Jauge charme = new Jauge("charme", 10, 5);
+    private Jauge abilite = new Jauge("ablite", 10, 5);
 
     //********* Constructeurs *********//
     public EtreVivant(String nom, String prenom, String sexe) {
@@ -61,7 +78,7 @@ public class EtreVivant {
     }
 
     public EtreVivant() {
-         this.statutLiberte = 0;
+        this.statutLiberte = 0;
         this.statutEtat = 1;
         this.age = 0;
 
@@ -70,11 +87,10 @@ public class EtreVivant {
         this.monId = id;
         id++;
 
-        
+
     }
 
     //******** Methodes de la classe *******//
- 
     public void feterSonAnniversaire() {
         this.age++;
         System.out.println("joyeux anniversaire " + prenom);
@@ -235,59 +251,69 @@ public class EtreVivant {
         System.out.println("nom : " + this.nom);
         System.out.println("prénom : " + this.prenom);
         System.out.println("age : " + this.age);
-        System.out.println("sexe : "+this.sexe);
-        System.out.println("Position :"+this.position.getNom());
-/*
-        System.out.println("Abilité " + mesJauges.getJaugeAbilite() + " /10");
-        System.out.println("Charme " + mesJauges.getJaugeCharme() + " /10");
-        System.out.println("Force " + mesJauges.getJaugeForce() + " /10");
-        System.out.println("Intelligence " + mesJauges.getJaugeIntelligence() + " /10");
-        System.out.println("Gentillesse " + mesJauges.getJaugeGentillesse() + " /10");
+        System.out.println("sexe : " + this.sexe);
+        System.out.println("Position :" + this.position.getNom());
+        /*
+         System.out.println("Abilité " + mesJauges.getJaugeAbilite() + " /10");
+         System.out.println("Charme " + mesJauges.getJaugeCharme() + " /10");
+         System.out.println("Force " + mesJauges.getJaugeForce() + " /10");
+         System.out.println("Intelligence " + mesJauges.getJaugeIntelligence() + " /10");
+         System.out.println("Gentillesse " + mesJauges.getJaugeGentillesse() + " /10");
 
-        System.out.println("Fatigue " + mesJauges.getJaugeFatigue() + " /10");
-        System.out.println("Humeur " + mesJauges.getJaugeProprete() + " /10");
-        System.out.println("Faim " + mesJauges.getJaugeFaim() + " /10");
-        */
+         System.out.println("Fatigue " + mesJauges.getJaugeFatigue() + " /10");
+         System.out.println("Humeur " + mesJauges.getJaugeProprete() + " /10");
+         System.out.println("Faim " + mesJauges.getJaugeFaim() + " /10");
+         */
 
+    }
+
+    public void allerAuxToilettes() {
+        if (proprete.getValeur() < proprete.getMax() - 1) {
+            proprete.setValeur(proprete.getValeur() + 2);
+        } else {
+
+            proprete.setValeur(proprete.getMax());
+
+        }
     }
 
     public void manger() {
 
         //Pour plus tard proposer differents trucs et augmenter de differents points la jauge
-        mesJauges.setJaugeFaim(10) ;
+        faim.setValeur(faim.getMax());
     }
 
     public void boire() {
-        if (mesJauges.getJaugeFaim() < 10) {
-            mesJauges.setJaugeFaim(mesJauges.getJaugeFaim() + 1);
+        if (faim.getValeur() < faim.getMax()) {
+            faim.setValeur(faim.getValeur() + 1);
         }
 
     }
 
     public void seLaver() {
-        mesJauges.setJaugeProprete(10);
-        
+        proprete.setValeur(proprete.getMax());
+
     }
 
     public void communiquer(EtreVivant personne) {
-        if (mesJauges.getJaugeHumeur() < 10) {
-            mesJauges.setJaugeHumeur(mesJauges.getJaugeHumeur() + 1);
+        if (humeur.getValeur() < humeur.getMax()) {
+            humeur.setValeur(humeur.getValeur() + 1);
         }
 
 
     }
 
     public void apprendre() {
-        if (mesJauges.getJaugeIntelligence() < 10) {
-            mesJauges.setJaugeIntelligence(mesJauges.getJaugeIntelligence() + 1);
+        if (intelligence.getValeur() < intelligence.getMax()) {
+            intelligence.setValeur(intelligence.getValeur() + 1);
         }
 
 
     }
 
     public void seFaireBeau() {
-        if (mesJauges.getJaugeHumeur() < 10) {
-            mesJauges.setJaugeHumeur(mesJauges.getJaugeHumeur() + 1);
+        if (humeur.getValeur() < humeur.getMax()) {
+            humeur.setValeur(humeur.getValeur() + 1) ;
         }
 
     }

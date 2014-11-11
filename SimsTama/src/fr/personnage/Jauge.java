@@ -9,7 +9,7 @@ package fr.personnage;
  * @author isen
  */
 public class Jauge {
-
+/*
     private int jaugeGentillesse;
     private int jaugeProprete;
     private int jaugeFaim;
@@ -19,9 +19,17 @@ public class Jauge {
     private int jaugeForce;
     private int jaugeCharme;
     private int jaugeAbilite;
-
-    public void Jauge() {
-        jaugeGentillesse = 5;
+*/
+    private String nom;
+    private int max;
+    private int valeur;
+    
+    public Jauge(String nom, int max, int valeur) {
+       
+        this.setNom(nom);
+        this.setMax(max);
+        this.setValeur(valeur);
+        /*jaugeGentillesse = 5;
         jaugeProprete = 10;
         jaugeFaim = 10;
         jaugeHumeur = 5;
@@ -29,84 +37,52 @@ public class Jauge {
         jaugeIntelligence = 0;
         jaugeForce = 0;
         jaugeCharme = 5;
-        jaugeAbilite = 0;
+        jaugeAbilite = 0;*/
+    }
+
+    /**
+     * @return the nom
+     */
+    public String getNom() {
+        return nom;
+    }
+
+    /**
+     * @param nom the nom to set
+     */
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    /**
+     * @return the max
+     */
+    public int getMax() {
+        return max;
+    }
+
+    /**
+     * @param max the max to set
+     */
+    public void setMax(int max) {
+        this.max = max;
+    }
+
+    /**
+     * @return the valeur
+     */
+    public int getValeur() {
+        return valeur;
+    }
+
+    /**
+     * @param valeur the valeur to set
+     */
+    public void setValeur(int valeur) {
+        this.valeur = valeur;
     }
 
     
 
-    public void allerAuxToilettes() {
-        this.jaugeProprete += 2;
-    }
 
-    public int getJaugeGentillesse() {
-        return jaugeGentillesse;
-    }
-
-    public void setJaugeGentillesse(int jaugeGentillesse) {
-        this.jaugeGentillesse = jaugeGentillesse;
-    }
-
-    public int getJaugeProprete() {
-        return jaugeProprete;
-    }
-
-    public void setJaugeProprete(int jaugeProprete) {
-        this.jaugeProprete = jaugeProprete;
-    }
-
-    public int getJaugeFaim() {
-        return jaugeFaim;
-    }
-
-    public void setJaugeFaim(int jaugeFaim) {
-        this.jaugeFaim = jaugeFaim;
-    }
-
-    public int getJaugeHumeur() {
-        return jaugeHumeur;
-    }
-
-    public void setJaugeHumeur(int jaugeHumeur) {
-        this.jaugeHumeur = jaugeHumeur;
-    }
-
-    public int getJaugeFatigue() {
-        return jaugeFatigue;
-    }
-
-    public void setJaugeFatigue(int jaugeFatigue) {
-        this.jaugeFatigue = jaugeFatigue;
-    }
-
-    public int getJaugeIntelligence() {
-        return jaugeIntelligence;
-    }
-
-    public void setJaugeIntelligence(int jaugeIntelligence) {
-        this.jaugeIntelligence = jaugeIntelligence;
-    }
-
-    public int getJaugeForce() {
-        return jaugeForce;
-    }
-
-    public void setJaugeForce(int jaugeForce) {
-        this.jaugeForce = jaugeForce;
-    }
-
-    public int getJaugeCharme() {
-        return jaugeCharme;
-    }
-
-    public void setJaugeCharme(int jaugeCharme) {
-        this.jaugeCharme = jaugeCharme;
-    }
-
-    public int getJaugeAbilite() {
-        return jaugeAbilite;
-    }
-
-    public void setJaugeAbilite(int jaugeAbilite) {
-        this.jaugeAbilite = jaugeAbilite;
-    }
 }
