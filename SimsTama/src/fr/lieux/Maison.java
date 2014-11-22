@@ -5,6 +5,8 @@
  */
 package fr.lieux;
 
+import fr.personnage.Tamagoshi;
+
 
 /**
  *
@@ -25,9 +27,10 @@ public class Maison extends Lieux{
     
     //Methodes
     
-    /*
+    
     public void menuMaison(Tamagoshi monTama){
     
+        
     /*
         Switch 
         -manger 
@@ -45,8 +48,8 @@ public class Maison extends Lieux{
         
     
     
-    
-    }    
-        */
+    */
  
+    }    
+        
 }
