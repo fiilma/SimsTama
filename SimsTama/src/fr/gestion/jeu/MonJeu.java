@@ -50,8 +50,6 @@ public class MonJeu {
 
     //Methode qui va lancer le jeu et le diriger
     public void jeu() {
-
-        
         Tamagoshi monTama = creationTama();
         creationUnivers(monTama);
 
@@ -62,10 +60,11 @@ public class MonJeu {
 
     public void creationUnivers(Tamagoshi monTama) {
 
+        //Creation d'une liste de lieux 
         monTama.mesLieux = Lieux.creerListeLieux();
         monTama.position=monTama.mesLieux[0];
-        //Creation d'une liste de lieux 
-        //Plus tard creation des autres perso ...
+   
+      
     }
 
     //Création d'un tama 

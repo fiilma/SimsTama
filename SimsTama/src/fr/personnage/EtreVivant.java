@@ -56,9 +56,6 @@ public class EtreVivant {
         this.statutLiberte = 0;
         this.statutEtat = 1;
         this.age = 0;
-
-        // position = "maison";
-
         this.monId = id;
         id++;
 
@@ -71,8 +68,6 @@ public class EtreVivant {
         this.statutLiberte = 0;
         this.statutEtat = 1;
         this.age = 0;
-        //position = "maison";
-
         this.monId = id;
         id++;
     }
