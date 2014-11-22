@@ -39,6 +39,7 @@ public class EtreVivant {
     private Jauge charme = new Jauge("charme", 10, 5);
     private Jauge abilite = new Jauge("ablite", 10, 5);
     public int temps = 0;
+    private int coeff = 1;
 
     //********* Constructeurs *********//
     public EtreVivant(String nom, String prenom, String sexe) {
@@ -85,7 +86,7 @@ public class EtreVivant {
     //******** Methodes de la classe *******//
     public void feterSonAnniversaire() {
         this.age++;
-        System.out.println("joyeux anniversaire " + prenom);
+        System.out.println("joyeux anniversaire " + prenom + " tu as maintenant " + this.age + " ans!!");
     }
 
     public void seMarier(EtreVivant personne) {
@@ -104,6 +105,7 @@ public class EtreVivant {
             personne.statutMatrimonial = "en couple";
             compagnon = personne;
             personne.compagnon = this;
+            leTempsPasse(1);
         } else {
             System.out.println("Votre comopagnon n'existe pas !");
         }
@@ -126,8 +128,9 @@ public class EtreVivant {
                 bebe.sexe = "male";
             } else {
                 bebe.sexe = "femelle";
-
+            leTempsPasse(2);
             }
+            
             return bebe;
         } else {
             EtreVivant bebe = new EtreVivant(this.compagnon.nom, prenom);
@@ -143,13 +146,30 @@ public class EtreVivant {
             } else {
                 bebe.sexe = "femelle";
             }
+            leTempsPasse(2);
             return bebe;
         }
 
     }
 
     public void leTempsPasse(int duree){
-        
+       
+   
+        temps += duree;
+        if (temps > coeff * 5) {
+            getProprete().setValeur(getProprete().getValeur() - 1);
+            getFaim().setValeur(getFaim().getValeur() - 1);
+            getFatigue().setValeur(getFatigue().getValeur() - 1);
+            getCharme().setValeur(getCharme().getValeur() - 1);
+            coeff ++ ;
+        }
+        if (temps > 365 * age){
+            this.feterSonAnniversaire();
+        }
+        if (this.age == 80){
+            this.mourir();
+            System.out.println("toute nos condoléances à la famille de "+prenom+" "+nom+".");
+        }
     }
     
     
@@ -177,6 +197,7 @@ public class EtreVivant {
     public void seDeplacer(Lieux lieu) { // a modifier String lieu en Lieu lieu quand la classe existera
         if (lieu != null) {
             position = lieu;
+            leTempsPasse(1);
         }
 
     }
@@ -229,18 +250,21 @@ public class EtreVivant {
         }
 
 
-
+    leTempsPasse(2);
     }
 
     public void acheter(String objet) {  // remplacer String par Objet quand la classe existera
+        leTempsPasse(2);
     }
 
     public void divorcer(EtreVivant personne) {
         this.compagnon.statutMatrimonial = "célibataire";
         statutMatrimonial = "célibataire";
+        leTempsPasse(1);
     }
 
     public void seBattre(EtreVivant personne) {
+        leTempsPasse(1);
     }
 
     public void afficherInformations() {
@@ -265,54 +289,73 @@ public class EtreVivant {
     }
 
     public void allerAuxToilettes() {
-        if (proprete.getValeur() < proprete.getMax() - 1) {
-            proprete.setValeur(proprete.getValeur() + 2);
+        if (getProprete().getValeur() < getProprete().getMax() - 1) {
+            getProprete().setValeur(getProprete().getValeur() + 2);
+            leTempsPasse(1);
         } else {
 
-            proprete.setValeur(proprete.getMax());
-
+            getProprete().setValeur(getProprete().getMax());
+            leTempsPasse(1);
         }
     }
 
     public void manger() {
 
         //Pour plus tard proposer differents trucs et augmenter de differents points la jauge
-        faim.setValeur(faim.getMax());
+        getFaim().setValeur(getFaim().getMax());
+        leTempsPasse(2);
     }
 
     public void boire() {
-        if (faim.getValeur() < faim.getMax()) {
-            faim.setValeur(faim.getValeur() + 1);
+        if (getFaim().getValeur() < getFaim().getMax()) {
+            getFaim().setValeur(getFaim().getValeur() + 1);
+            leTempsPasse(1);
         }
 
     }
 
     public void seLaver() {
-        proprete.setValeur(proprete.getMax());
+        getProprete().setValeur(getProprete().getMax());
+        leTempsPasse(2);
 
     }
 
     public void communiquer(EtreVivant personne) {
-        if (humeur.getValeur() < humeur.getMax()) {
-            humeur.setValeur(humeur.getValeur() + 1);
+        if (getHumeur().getValeur() < getHumeur().getMax()) {
+            getHumeur().setValeur(getHumeur().getValeur() + 1);
+            leTempsPasse(2);
         }
 
 
     }
 
     public void apprendre() {
-        if (intelligence.getValeur() < intelligence.getMax()) {
-            intelligence.setValeur(intelligence.getValeur() + 1);
+        if (getIntelligence().getValeur() < getIntelligence().getMax()) {
+            getIntelligence().setValeur(getIntelligence().getValeur() + 1);
+            leTempsPasse(3);
         }
 
 
     }
 
     public void seFaireBeau() {
-        if (humeur.getValeur() < humeur.getMax()) {
-            humeur.setValeur(humeur.getValeur() + 1) ;
+        if (getHumeur().getValeur() < getHumeur().getMax()) {
+            getHumeur().setValeur(getHumeur().getValeur() + 1) ;
+            if(this.sexe == "Male"){
+                leTempsPasse(1);
+            }
+            else {
+                leTempsPasse(3);
+            }
         }
 
+    }
+    
+    public void seReposer() {
+        if (getFatigue().getValeur() < getFatigue().getMax()){
+            getFatigue().setValeur(getFatigue().getMax());
+            leTempsPasse(1);
+        }
     }
 
     //************ GET et SET ***************//
@@ -392,5 +435,68 @@ public class EtreVivant {
 
     public void setCompagnon(EtreVivant compagnon) {
         this.compagnon = compagnon;
+    }
+
+    /**
+     * @return the proprete
+     */
+    public Jauge getProprete() {
+        return proprete;
+    }
+
+    /**
+     * @param proprete the proprete to set
+     */
+    public void setProprete(Jauge proprete) {
+        this.proprete = proprete;
+    }
+
+    /**
+     * @return the faim
+     */
+    public Jauge getFaim() {
+        return faim;
+    }
+
+    /**
+     * @return the humeur
+     */
+    public Jauge getHumeur() {
+        return humeur;
+    }
+
+    /**
+     * @return the fatigue
+     */
+    public Jauge getFatigue() {
+        return fatigue;
+    }
+
+    /**
+     * @return the intelligence
+     */
+    public Jauge getIntelligence() {
+        return intelligence;
+    }
+
+    /**
+     * @return the force
+     */
+    public Jauge getForce() {
+        return force;
+    }
+
+    /**
+     * @return the charme
+     */
+    public Jauge getCharme() {
+        return charme;
+    }
+
+    /**
+     * @return the abilite
+     */
+    public Jauge getAbilite() {
+        return abilite;
     }
 }
