@@ -34,7 +34,7 @@ public class Tamagoshi extends EtreVivant{
  
  public void changerLieux(){
  
-     System.out.println("Lieu actuel: "+this.position);
+     System.out.println("Lieu actuel: "+this.position.getNom());
      System.out.println("Où voulez vous allez ?");
      
      //Switch avec liste des lieux
