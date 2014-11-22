@@ -29,15 +29,6 @@ public class EtreVivant {
     private int statutLiberte;
     private int random;
     private EtreVivant compagnon;
-    /*jaugeGentillesse = 5;
-     jaugeProprete = 10;
-     jaugeFaim = 10;
-     jaugeHumeur = 5;
-     jaugeFatigue = 10;
-     jaugeIntelligence = 0;
-     jaugeForce = 0;
-     jaugeCharme = 5;
-     jaugeAbilite = 0;*/
     private Jauge gentillesse = new Jauge("gentillesse", 10, 5);
     private Jauge proprete = new Jauge("proprete", 10, 5);
     private Jauge faim = new Jauge("faim", 10, 5);
@@ -47,6 +38,7 @@ public class EtreVivant {
     private Jauge force = new Jauge("force", 10, 5);
     private Jauge charme = new Jauge("charme", 10, 5);
     private Jauge abilite = new Jauge("ablite", 10, 5);
+    public int temps = 0;
 
     //********* Constructeurs *********//
     public EtreVivant(String nom, String prenom, String sexe) {
@@ -156,6 +148,11 @@ public class EtreVivant {
 
     }
 
+    public void leTempsPasse(int duree){
+        
+    }
+    
+    
     public String donnerNom() {
 
 
