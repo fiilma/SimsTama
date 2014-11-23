@@ -108,7 +108,7 @@ public class EtreVivant {
 
     public EtreVivant faireUnBebe() {
 
-        String prenom = donnerNom();
+     ;
         if (sexe.equals("male")) {
             EtreVivant bebe = new EtreVivant(this.nom, prenom);
             bebe.age = 0;
@@ -168,15 +168,6 @@ public class EtreVivant {
     }
     
     
-    public String donnerNom() {
-
-
-        String prenom = "";
-        //Ici on entre un nom et on le donne à la personne
-
-
-        return prenom;
-    }
 
     public void mourir() {
         statutEtat = 0;
@@ -189,13 +180,6 @@ public class EtreVivant {
 
     }
 
-    public void seDeplacer(Lieux lieu) { // a modifier String lieu en Lieu lieu quand la classe existera
-        if (lieu != null) {
-            position = lieu;
-            leTempsPasse(1);
-        }
-
-    }
 
     public void seduire(EtreVivant personne) {
 
@@ -349,7 +333,7 @@ public class EtreVivant {
     public void seReposer() {
         if (getFatigue().getValeur() < getFatigue().getMax()){
             getFatigue().setValeur(getFatigue().getMax());
-            leTempsPasse(1);
+            leTempsPasse(3);
         }
     }
 

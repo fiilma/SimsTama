@@ -3,6 +3,7 @@ package fr.gestion.jeu;
 
 import java.util.Scanner;
 import fr.lieux.Lieux;
+import fr.lieux.Maison;
 import fr.personnage.Tamagoshi;
 
 /**
@@ -51,12 +52,10 @@ public class MonJeu {
     //Methode qui va lancer le jeu et le diriger
     public void jeu() {
         Tamagoshi monTama = creationTama();
-        Lieux monLieu= new Lieux();
+        Lieux monLieu= new Maison();
         creationUnivers(monTama,monLieu);
         monLieu.menuJeu(monTama);
-        //Test 
-        //monTama.afficherInformations();
-        //Appel maison
+      
     }
 
     public void creationUnivers(Tamagoshi monTama, Lieux monLieu) {

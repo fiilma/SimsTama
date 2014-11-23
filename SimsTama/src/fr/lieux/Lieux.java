@@ -12,7 +12,7 @@ import fr.personnage.Tamagoshi;
  *
  * @author roumi
  */
-public class Lieux {
+public abstract class Lieux {
 
     private String nom;
 
@@ -48,7 +48,7 @@ public class Lieux {
         //Action à effectuer selon le choix
         switch (monEntree) {
             case 1:
-                faireAction();
+                monTama.position.faireAction(monTama);
 
                 break;
             case 2:
@@ -70,7 +70,7 @@ public class Lieux {
         }
     }
 
-    public  void faireAction(){};
+    public abstract void faireAction(Tamagoshi monTama);
 
     ;
     public  Lieux[] creerListeLieux() {
