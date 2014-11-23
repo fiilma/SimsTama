@@ -20,7 +20,7 @@ public class MonJeu {
         //On écrit le menu 
         Scanner monEntree = new Scanner(System.in);
 
-        System.out.println("1- Jouer \n2- Continuer\n3- Quitter");
+        System.out.println("1- Jouer \n2- Quitter");
 
         //Demande du choix
         int entree = monEntree.nextInt();
@@ -33,10 +33,6 @@ public class MonJeu {
                 break;
 
             case 2:
-                //Ouvre fichiers sauvegardes
-                break;
-
-            case 3:
 
                 System.exit(0);
                 break;
