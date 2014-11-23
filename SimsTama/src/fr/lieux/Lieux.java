@@ -4,79 +4,111 @@
  * and open the template in the editor.
  */
 package fr.lieux;
+
 import java.util.Scanner;
 import fr.personnage.Tamagoshi;
+
 /**
  *
  * @author roumi
  */
 public class Lieux {
-   
+
     private String nom;
-    
-    
+
     //Methodes
-    
-    
-    public static void menuJeu(Tamagoshi monTama){
-          /*
-            * Switch
-     * 1/ Quitter 
-     * 2/ Aller vers => Afficher les autres lieux 
-     * 3/ Sauvegarder 
-       4/ Charger une autre partie 
-     * 5/ Les jauges 
-        6/ Voir objets
-     * 
-     */
-    
-         //On écrit le menu 
+    public void menuJeu(Tamagoshi monTama) {
+        /*
+         * Switch
+         * 1/ Quitter 
+         * 2/ Aller vers => Afficher les autres lieux 
+         * 3/ Sauvegarder 
+         4/ Charger une autre partie 
+         * 5/ Les jauges 
+         6/ Voir objets
+         * 
+         */
+
         Scanner entree = new Scanner(System.in);
-        System.out.println("1- Aller vers\n2- Informations\n3- Objets\n4- Sauvegarder\n5- Charger\n6- Quitter");
-        
-       //Demande du choix
+
+        //Affiche le nom et le nombre de jour du joueur
+        System.out.println(monTama.getPrenom() + "\t\t"+monTama.position.getNom()+"\t\t"+ monTama.temps + " Jours");
+        System.out.println("\n\n\n\n");
+        //Affiche le bonhomme 
+        System.out.println("\t \t o");
+        System.out.println("\t \t/_\\  ");
+        System.out.println("\n\n\n\n");
+        //Affiche phrase etat 
+        //System.out.println(Etat);
+        //Affiche le menu 
+        System.out.println("1/ Actions 2/ Jauges 3/ Aller vers 4/ Quitter");
+        //Demande du choix
         int monEntree = entree.nextInt();
 
         //Action à effectuer selon le choix
-        
         switch (monEntree) {
             case 1:
-                 monTama.changerLieux();
-                
-                break;
+                faireAction();
 
+                break;
             case 2:
-                monTama.afficherInformations();
+                voirJauges(monTama);
                 break;
 
             case 3:
-                //monTama.afficherObjets();
+              monTama.changerLieux(this);
                 
                 break;
 
-        
+            case 4:
+                System.exit(0);
+
             default:
-                
+                System.out.println("\n\n\n\n");
                 menuJeu(monTama);
-  
-    }
+
+        }
     }
 
-    public static Lieux[] creerListeLieux(){
-    
+    public  void faireAction(){};
+
+    ;
+    public  Lieux[] creerListeLieux() {
+
         //Tableau des lieux
-        Lieux[] tableau= new Lieux[1]; 
-        
+        Lieux[] tableau = new Lieux[1];
+
         //Creation des lieux
-        Maison maMaison= new Maison();
+        Maison maMaison = new Maison();
         
+
         //Remplissage du tableau
-        tableau[0]=maMaison;
-    
-    return tableau;
-    
+        tableau[0] = maMaison;
+
+        return tableau;
+
     }
+
+
+
+    public void voirJauges(Tamagoshi monTama) {
+        Scanner entree = new Scanner(System.in);
+        System.out.println("\n\n\n\n");
+        monTama.afficherInformations();
+        System.out.println("\n 1- retour ");
+   //Exception aussi pour les string entres
+        int monChoix =entree.nextInt();
+        if (monChoix == 1) {
+            System.out.println("\n\n\n\n");
+            menuJeu(monTama);
+        } else {
+            voirJauges(monTama);
+        }
+
+    }
+
     //************GET etSET *************//
+
     /**
      * @return the nom
      */
@@ -90,8 +122,5 @@ public class Lieux {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    
-    
-    
-    
+
 }

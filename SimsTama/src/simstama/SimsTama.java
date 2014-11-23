@@ -16,7 +16,7 @@ import fr.gestion.jeu.MonJeu;
 public class SimsTama {
 
     public static void main(String[] args) {
-
+/*
         // EtreHumain monHumain= new EtreHumain("roumi","seb","truc","Bleu","Noir","Magicien");
 
         // System.out.println(monHumain.getNom()+monHumain.getPrenom());
@@ -97,12 +97,12 @@ public class SimsTama {
         System.out.println("le temsps est : "+boby.temps);
         System.out.println(boby.getAge()); 
         
-        /*
+        */
          MonJeu jeu=new MonJeu();
 
         
          jeu.Menu();
-*/
+
     }
 }
 /*
