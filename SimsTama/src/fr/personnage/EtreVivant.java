@@ -83,7 +83,7 @@ public class EtreVivant {
     //******** Methodes de la classe *******//
     public void feterSonAnniversaire() {
         this.age++;
-        System.out.println("joyeux anniversaire " + prenom + " tu as maintenant " + this.age + " ans!!");
+        //System.out.println("joyeux anniversaire " + prenom + " tu as maintenant " + this.age + " ans!!");
     }
 
     public void seMarier(EtreVivant personne) {
@@ -153,13 +153,49 @@ public class EtreVivant {
        
    
         temps += duree;
-        if (temps > coeff * 5) {
+        System.out.println(temps);
+        System.out.println("cocuou");
+        if (temps >= coeff * 5) {
             getProprete().setValeur(getProprete().getValeur() - 1);
             getFaim().setValeur(getFaim().getValeur() - 1);
             getFatigue().setValeur(getFatigue().getValeur() - 1);
             getCharme().setValeur(getCharme().getValeur() - 1);
             coeff ++ ;
         }
+        if (getProprete().getValeur()<3){
+            System.out.println("Attention tu ferais bien d'aller te laver ou encore aller au toilette.");
+        }
+        
+        if (getProprete().getValeur() == 0){
+            System.out.println("Ta propreter laisse sérieusement à désirer. Les gens te sentent arriver de loin!!");
+            getProprete().setValeur(getProprete().getValeur() + 1);
+        }
+        
+        if (getFaim().getValeur()<3){
+            System.out.println("Attention tu commence serieusement à avoir faim. Si tu ne mange pas rapidement il va t'arriver des problèmes");
+        }
+        
+        if (getFaim().getValeur() == 0){
+            System.out.println("Tu es resté trop longtemps sans manger!!");
+            this.mourir();
+        }
+        if (getFatigue().getValeur()<3){
+            System.out.println("Attention tu es très fatigué tu devrais dormir.");
+        }
+        
+        if (getFatigue().getValeur() == 0){
+            System.out.println("tu étais tellement fatigué que tu t'es effondré de fatigue.");
+            this.seReposer();
+        }
+         if (getCharme().getValeur()<3){
+            System.out.println("tu ferais bien de passer un peu plus de temps a prendre soin de toi.Regarde toi un peu dans le miroir et fais toi beau");
+        }
+        
+        if (getCharme().getValeur() == 0){
+            System.out.println("Tu es un peu comme un homme des cavernes fais toi beau si tu veux plaire a nouveau");
+            getCharme().setValeur(getCharme().getValeur() + 1);
+        }
+        
         if (temps > 365 * nbAnniv){
             this.feterSonAnniversaire();
             nbAnniv ++;
@@ -174,12 +210,16 @@ public class EtreVivant {
 
     public void mourir() {
         statutEtat = 0;
+        
         System.out.println("repose en paix " + prenom + " " + nom);
-        if (this.compagnon.sexe.equals("femelle")) {
-            this.compagnon.statutMatrimonial = "veuve";
-        } else {
-            this.compagnon.statutMatrimonial = "veuf";
+        if (this.compagnon != null){
+            if (this.compagnon.sexe.equals("femelle")) {
+                this.compagnon.statutMatrimonial = "veuve";
+            } else {
+                this.compagnon.statutMatrimonial = "veuf";
+            }
         }
+        System.exit(0);
 
     }
 
@@ -234,7 +274,7 @@ public class EtreVivant {
     leTempsPasse(2);
     }
 
-    public void acheter(String objet) {  // remplacer String par Objet quand la classe existera
+    public void acheter(String objet) {  // remplacer String par Objet
         leTempsPasse(2);
     }
 
@@ -282,7 +322,7 @@ public class EtreVivant {
 
     public void manger() {
 
-        //Pour plus tard proposer differents trucs et augmenter de differents points la jauge
+
         getFaim().setValeur(getFaim().getMax());
         leTempsPasse(2);
     }
@@ -335,7 +375,7 @@ public class EtreVivant {
     public void seReposer() {
         if (getFatigue().getValeur() < getFatigue().getMax()){
             getFatigue().setValeur(getFatigue().getMax());
-            leTempsPasse(3);
+            leTempsPasse(4);
         }
     }
 

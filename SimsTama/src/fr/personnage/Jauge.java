@@ -9,17 +9,8 @@ package fr.personnage;
  * @author isen
  */
 public class Jauge {
-/*
-    private int jaugeGentillesse;
-    private int jaugeProprete;
-    private int jaugeFaim;
-    private int jaugeHumeur;
-    private int jaugeFatigue;
-    private int jaugeIntelligence;
-    private int jaugeForce;
-    private int jaugeCharme;
-    private int jaugeAbilite;
-*/
+
+
     private String nom;
     private int max;
     private int valeur;
@@ -29,15 +20,7 @@ public class Jauge {
         this.setNom(nom);
         this.setMax(max);
         this.setValeur(valeur);
-        /*jaugeGentillesse = 5;
-        jaugeProprete = 10;
-        jaugeFaim = 10;
-        jaugeHumeur = 5;
-        jaugeFatigue = 10;
-        jaugeIntelligence = 0;
-        jaugeForce = 0;
-        jaugeCharme = 5;
-        jaugeAbilite = 0;*/
+
     }
 
     /**
