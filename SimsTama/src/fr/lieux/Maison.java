@@ -41,39 +41,39 @@ public class Maison extends Lieux {
             case 1:
                 monTama.manger();
                 System.out.println("Miam!");
-                attendre();
+           
                 faireAction(monTama);
                 break;
             case 2:
                 monTama.boire();
                 System.out.println("Gloup!");
-                attendre();
+               
                 faireAction(monTama);
                 break;
             case 3:
                 monTama.seLaver();
                 System.out.println(monTama.getPrenom() + " est tout propre");
-                attendre();
+                
                 faireAction(monTama);
                 break;
             case 4:
                 monTama.seFaireBeau();
-                System.out.println(monTama.getPrenom() + " est tout beau!");
-                attendre();
+                System.out.println(monTama.getPrenom() + " est magnifique!");
+         
                 faireAction(monTama);
 
                 break;
             case 5:
                 monTama.seReposer();
                 System.out.println("Rrrrrrrrrrrrr");
-                attendre();
+         
                 faireAction(monTama);
 
                 break;
             case 6:
                 monTama.allerAuxToilettes();
-                System.out.println(monTama.getPrenom() + " est plus léger!");
-                attendre();
+                System.out.println(monTama.getPrenom() + " est plus légé!");
+           
                 faireAction(monTama);
                 break;
 
@@ -88,11 +88,6 @@ public class Maison extends Lieux {
     }
 
     
-    public void attendre() {
-
-        for (int i = 0; i < 500; i++) {
-
-        }
-    }
+    
 
 }

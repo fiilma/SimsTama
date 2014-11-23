@@ -39,7 +39,9 @@ public abstract class Lieux {
         System.out.println("\t \t/_\\  ");
         System.out.println("\n\n\n\n");
         //Affiche phrase etat 
-        //System.out.println(Etat);
+        String monEtat=voirEtat(monTama);
+        System.out.println(monEtat);
+       
         //Affiche le menu 
         System.out.println("1/ Actions 2/ Jauges 3/ Aller vers 4/ Quitter");
         //Demande du choix
@@ -90,6 +92,30 @@ public abstract class Lieux {
     }
 
 
+    public String voirEtat(Tamagoshi monTama){
+    
+        String etat=" ";
+        
+        if (monTama.getFaim().getValeur()<5) {
+           
+            etat= "BrrrrGRrr faim *.*";
+        }
+    
+        else if (monTama.getFatigue().getValeur()<5){
+            etat="Zzzzzzzzzzzz :'(";
+        }
+        
+        else if (monTama.getProprete().getValeur()<5) {
+            
+            etat="Des mouches volent autours de votre Tama!";
+            
+        }
+        
+       else
+            etat=" ";
+    
+        return etat;
+    }
 
     public void voirJauges(Tamagoshi monTama) {
         Scanner entree = new Scanner(System.in);
