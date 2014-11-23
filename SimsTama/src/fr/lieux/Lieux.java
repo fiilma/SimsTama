@@ -18,17 +18,7 @@ public abstract class Lieux {
 
     //Methodes
     public void menuJeu(Tamagoshi monTama) {
-        /*
-         * Switch
-         * 1/ Quitter 
-         * 2/ Aller vers => Afficher les autres lieux 
-         * 3/ Sauvegarder 
-         4/ Charger une autre partie 
-         * 5/ Les jauges 
-         6/ Voir objets
-         * 
-         */
-
+    
         Scanner entree = new Scanner(System.in);
 
         //Affiche le nom et le nombre de jour du joueur
@@ -45,10 +35,18 @@ public abstract class Lieux {
         //Affiche le menu 
         System.out.println("1/ Actions 2/ Jauges 3/ Aller vers 4/ Quitter");
         //Demande du choix
-        int monEntree = entree.nextInt();
-
+        int monChoix=0;
+     try {
+        monChoix = entree.nextInt();
+    }
+        catch(java.util.InputMismatchException e) {
+        
+            menuJeu(monTama);
+        }
+    
+       
         //Action à effectuer selon le choix
-        switch (monEntree) {
+        switch (monChoix) {
             case 1:
                 monTama.position.faireAction(monTama);
 
@@ -74,18 +72,18 @@ public abstract class Lieux {
 
     public abstract void faireAction(Tamagoshi monTama);
 
-    ;
     public  Lieux[] creerListeLieux() {
 
         //Tableau des lieux
-        Lieux[] tableau = new Lieux[1];
+        Lieux[] tableau = new Lieux[2];
 
         //Creation des lieux
         Maison maMaison = new Maison();
-        
+        Place maPlace=new Place();
 
         //Remplissage du tableau
         tableau[0] = maMaison;
+        tableau[1]=maPlace;
 
         return tableau;
 
@@ -122,8 +120,14 @@ public abstract class Lieux {
         System.out.println("\n\n\n\n");
         monTama.afficherInformations();
         System.out.println("\n 1- retour ");
-   //Exception aussi pour les string entres
-        int monChoix =entree.nextInt();
+   int monChoix=0;
+     try {
+        monChoix = entree.nextInt();
+    }
+        catch(java.util.InputMismatchException e) {
+        
+            voirJauges(monTama);
+        }
         if (monChoix == 1) {
             System.out.println("\n\n\n\n");
             menuJeu(monTama);

@@ -51,7 +51,7 @@ public class Tamagoshi extends EtreVivant {
         }
     
        
-       monChoix = entree.nextInt();
+     
         //Vérifie qu'on rentre un bon numero 
         if (monChoix < this.mesLieux.length+2) {
               if(monChoix==this.mesLieux.length+1){
