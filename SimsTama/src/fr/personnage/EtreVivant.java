@@ -211,7 +211,7 @@ public class EtreVivant {
     public void mourir() {
         statutEtat = 0;
         
-        System.out.println("repose en paix " + prenom + " " + nom);
+        System.out.println(  prenom + " " + nom +" est décédé. Repose en paix ");
         if (this.compagnon != null){
             if (this.compagnon.sexe.equals("femelle")) {
                 this.compagnon.statutMatrimonial = "veuve";
@@ -361,7 +361,7 @@ public class EtreVivant {
 
     public void seFaireBeau() {
         if (getHumeur().getValeur() < getHumeur().getMax()) {
-            getHumeur().setValeur(getHumeur().getValeur() + 1) ;
+            getHumeur().setValeur(getHumeur().getMax() ) ;
             if(this.sexe == "Male"){
                 leTempsPasse(1);
             }
