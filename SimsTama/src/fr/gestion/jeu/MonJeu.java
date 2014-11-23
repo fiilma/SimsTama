@@ -78,9 +78,7 @@ public class MonJeu {
         System.out.println("Bonjour, vous êtes chez les SimsTama !");
         System.out.println("Vous allez créer votre Tama maintenant ! ");
         
-        //On attend un appuie 
-        monEntree.nextLine();
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("\n\n");
         System.out.println("Quel nom souhaitez vous lui donner ?");
         monTama.setNom(monEntree.nextLine());
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -104,8 +102,15 @@ public class MonJeu {
 
     System.out.println("Est ce une femelle (1) ou un mâle (2) ? ");
         //Placer une exception pour les string 
-        int monChoix = monEntree.nextInt();
+       int monChoix=0; 
+    try {
+        monChoix = monEntree.nextInt();
+    }
+        catch(java.util.InputMismatchException e) {
         
+            choixSexe(monTama);
+        }
+    
        
         switch(monChoix){
             case 1: monTama.setSexe("f");

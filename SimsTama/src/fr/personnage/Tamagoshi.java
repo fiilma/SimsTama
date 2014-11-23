@@ -41,8 +41,17 @@ public class Tamagoshi extends EtreVivant {
 
         }
         System.out.println(this.mesLieux.length + 1 + "-Retour");
-        //Exception à gérer
-        int monChoix = entree.nextInt();
+       int monChoix=0;
+     try {
+        monChoix = entree.nextInt();
+    }
+        catch(java.util.InputMismatchException e) {
+        
+            changerLieux(monLieu);
+        }
+    
+       
+       monChoix = entree.nextInt();
         //Vérifie qu'on rentre un bon numero 
         if (monChoix < this.mesLieux.length+2) {
               if(monChoix==this.mesLieux.length+1){

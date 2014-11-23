@@ -33,9 +33,15 @@ public class Maison extends Lieux {
         System.out.println("1-Manger 2-Boire 3-Se laver 4-Se faire beau 5-Dormir 6-Aller aux toilettes 7-Retour");
 
             //Entre le choix 
-        //Exception string aussi 
-        int choix = entree.nextInt();
-
+        int choix=0;
+        try {
+        choix = entree.nextInt();
+    }
+        catch(java.util.InputMismatchException e) {
+        
+            faireAction(monTama);
+        }
+    
         switch (choix) {
 
             case 1:
