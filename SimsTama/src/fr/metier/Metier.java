@@ -9,7 +9,7 @@ package fr.metier;
  *
  * @author roumi
  */
-public abstract class Metier {
+public class Metier {
     
     
     
@@ -43,6 +43,5 @@ public abstract class Metier {
     
    //***** Methode ******//
    
-   abstract void travailler();
    
 }
