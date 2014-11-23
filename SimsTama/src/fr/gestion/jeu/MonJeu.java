@@ -3,6 +3,7 @@ package fr.gestion.jeu;
 
 import java.util.Scanner;
 import fr.lieux.Lieux;
+import fr.lieux.Maison;
 import fr.personnage.Tamagoshi;
 
 /**
@@ -50,22 +51,20 @@ public class MonJeu {
 
     //Methode qui va lancer le jeu et le diriger
     public void jeu() {
-
-        
         Tamagoshi monTama = creationTama();
-        creationUnivers(monTama);
-
-        //Test 
-        monTama.afficherInformations();
-        //Appel maison
+        Lieux monLieu= new Maison();
+        creationUnivers(monTama,monLieu);
+        monLieu.menuJeu(monTama);
+      
     }
 
-    public void creationUnivers(Tamagoshi monTama) {
+    public void creationUnivers(Tamagoshi monTama, Lieux monLieu) {
 
-        monTama.mesLieux = Lieux.creerListeLieux();
-        monTama.position=monTama.mesLieux[0];
         //Creation d'une liste de lieux 
-        //Plus tard creation des autres perso ...
+        monTama.mesLieux = monLieu.creerListeLieux();
+        monTama.position=monTama.mesLieux[0];
+   
+      
     }
 
     //Création d'un tama 
@@ -74,29 +73,54 @@ public class MonJeu {
         Scanner monEntree = new Scanner(System.in);
 
         Tamagoshi monTama = new Tamagoshi();
-
+        //On nettoie la console 
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println("Bonjour, vous êtes chez les SimsTama !");
         System.out.println("Vous allez créer votre Tama maintenant ! ");
-
-        System.out.println("Nom:");
-
+        
+        System.out.println("\n\n");
+        System.out.println("Quel nom souhaitez vous lui donner ?");
         monTama.setNom(monEntree.nextLine());
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
-        System.out.println("Prénom:");
+        System.out.println("Quel prénom souhaitez vous lui donner ? ");
         String prenom = monEntree.nextLine();
         monTama.setPrenom(prenom);
-
-        System.out.println("Sexe:");
-        monTama.setSexe(monEntree.nextLine());
-
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         
+        choixSexe(monTama);
         
-      //Faire un test pour savoir si on a rentrer un bon s
-        //Répartition des caractéristiques. 
-        //Demande si on souhaite sauvegarder 
-        //  -> Oui on crée un fichier et on continue
-        //  -> Non on continue
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
         return monTama;
     }
 
+    public void choixSexe(Tamagoshi monTama){
+    
+        
+        Scanner monEntree = new Scanner(System.in);
+
+    System.out.println("Est ce une femelle (1) ou un mâle (2) ? ");
+        //Placer une exception pour les string 
+       int monChoix=0; 
+    try {
+        monChoix = monEntree.nextInt();
+    }
+        catch(java.util.InputMismatchException e) {
+        
+            choixSexe(monTama);
+        }
+    
+       
+        switch(monChoix){
+            case 1: monTama.setSexe("f");
+                break;
+                
+            case 2: monTama.setSexe("m");
+                break;        
+                
+            default: choixSexe(monTama);
+        }
+        
+    }
 }
