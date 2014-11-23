@@ -40,6 +40,7 @@ public class EtreVivant {
     private Jauge abilite = new Jauge("ablite", 10, 5);
     public int temps = 0;
     private int coeff = 1;
+    private int nbAnniv =1;
 
     //********* Constructeurs *********//
     public EtreVivant(String nom, String prenom, String sexe) {
@@ -163,8 +164,9 @@ public class EtreVivant {
             getCharme().setValeur(getCharme().getValeur() - 1);
             coeff ++ ;
         }
-        if (temps > 365 * age){
+        if (temps > 5 * nbAnniv){
             this.feterSonAnniversaire();
+            nbAnniv ++;
         }
         if (this.age == 80){
             this.mourir();
