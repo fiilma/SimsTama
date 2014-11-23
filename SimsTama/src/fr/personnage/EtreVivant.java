@@ -159,7 +159,7 @@ public class EtreVivant {
             getCharme().setValeur(getCharme().getValeur() - 1);
             coeff ++ ;
         }
-        if (temps > 5 * nbAnniv){
+        if (temps > 365 * nbAnniv){
             this.feterSonAnniversaire();
             nbAnniv ++;
         }
@@ -217,7 +217,6 @@ public class EtreVivant {
                     }
                 }
                 i++;
-                // monCounter++;
             }
             if (testMaList == false) {
                 ListContact.add(new Relationnelle(personne.monId));
@@ -254,18 +253,18 @@ public class EtreVivant {
         System.out.println("prénom : " + this.prenom);
         System.out.println("age : " + this.age);
         System.out.println("sexe : " + this.sexe);
-        System.out.println("Position :" + this.position.getNom());
-        /*
-         System.out.println("Abilité " + mesJauges.getJaugeAbilite() + " /10");
-         System.out.println("Charme " + mesJauges.getJaugeCharme() + " /10");
-         System.out.println("Force " + mesJauges.getJaugeForce() + " /10");
-         System.out.println("Intelligence " + mesJauges.getJaugeIntelligence() + " /10");
-         System.out.println("Gentillesse " + mesJauges.getJaugeGentillesse() + " /10");
+      //  System.out.println("Position :" + this.position.getNom());
+        
+         System.out.println("Abilité " + abilite.getValeur() + " /10");
+         System.out.println("Charme " + charme.getValeur() + " /10");
+         System.out.println("Force " + force.getValeur() + " /10");
+         System.out.println("Intelligence " + intelligence.getValeur() + " /10");
+         System.out.println("Gentillesse " + gentillesse.getValeur() + " /10");
 
-         System.out.println("Fatigue " + mesJauges.getJaugeFatigue() + " /10");
-         System.out.println("Humeur " + mesJauges.getJaugeProprete() + " /10");
-         System.out.println("Faim " + mesJauges.getJaugeFaim() + " /10");
-         */
+         System.out.println("Fatigue " + fatigue.getValeur() + " /10");
+         System.out.println("Humeur " + proprete.getValeur() + " /10");
+         System.out.println("Faim " + faim.getValeur() + " /10");
+         
 
     }
 

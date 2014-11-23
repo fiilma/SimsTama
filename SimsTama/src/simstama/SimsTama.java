@@ -85,7 +85,7 @@ public class SimsTama {
         //    System.out.println(buby.ListContact.get(i).getJaugeRelationnelle());
             
         }
-        System.out.println("le temsps est : "+boby.temps);
+
         System.out.println(boby.getAge()); 
         boby.seReposer();
         boby.manger();
@@ -96,7 +96,9 @@ public class SimsTama {
         boby.allerAuxToilettes();
         System.out.println("le temsps est : "+boby.temps);
         System.out.println(boby.getAge()); 
-        
+        boby.afficherInformations();
+        boby.apprendre();
+        boby.afficherInformations();
         */
          MonJeu jeu=new MonJeu();
 
