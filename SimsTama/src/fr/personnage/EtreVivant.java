@@ -52,6 +52,7 @@ public class EtreVivant {
         this.age = 0;
         this.monId = id;
         id++;
+        
 
 
     }
