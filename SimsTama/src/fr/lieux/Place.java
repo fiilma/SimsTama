@@ -72,8 +72,8 @@ public class Place extends Lieux {
             System.out.println(i + 1 + "- " + this.lieuxPlace[i].getNom());
         }
 
-        System.out.println(this.lieuxPlace.length + 1 + "-Retour");
-
+        System.out.println(this.lieuxPlace.length + 1 + "- Retour");
+ 
         int monChoix = 0;
         try {
             monChoix = entree.nextInt();
@@ -83,10 +83,20 @@ public class Place extends Lieux {
         }
 
         //Pour cette version du jeu tout est fermé
+        if(monChoix-1<this.lieuxPlace.length){
         System.out.println("Nous sommes désolés mais le " + this.lieuxPlace[monChoix - 1].getNom() + " est fermé");
-        faireAction(monTama);
+        faireAction(monTama);}
+        
+        else if(monChoix==4){
+         this.faireAction(monTama);
+        }
+        
+        else {
+        this.explorer(monTama);
+        }
+        } 
 
-    }
+    
 
     public void discuter(Tamagoshi monTama) {
 //Un personnage uniquement dans cette version
