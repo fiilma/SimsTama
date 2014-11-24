@@ -4,7 +4,7 @@ import fr.lieux.Lieux;
 import java.util.Scanner;
 
 /**
- *
+ *Classe des tamagoshi
  * @author roumi
  */
 public class Tamagoshi extends EtreVivant {
@@ -29,6 +29,12 @@ public class Tamagoshi extends EtreVivant {
     }
 
  //Methodes 
+   /**
+         * Prmet au tama de changer de lieux
+         * 
+         * @param Lieux
+         *            
+         */
     public void changerLieux(Lieux monLieu) {
 
         Scanner entree = new Scanner(System.in);

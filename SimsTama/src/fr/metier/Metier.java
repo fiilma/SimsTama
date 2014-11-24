@@ -6,7 +6,7 @@
 package fr.metier;
 
 /**
- *
+ *Classe des métiers.
  * @author roumi
  */
 public class Metier {

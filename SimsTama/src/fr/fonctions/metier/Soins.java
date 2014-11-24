@@ -6,7 +6,7 @@
 package fr.fonctions.metier;
 import fr.personnage.EtreVivant;
 /**
- *
+ *Interface qui contient les methodes pour les personnes capable d'apporter des soins
  * @author roumi
  */
 public interface Soins {

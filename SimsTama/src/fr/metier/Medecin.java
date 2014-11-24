@@ -7,7 +7,7 @@ package fr.metier;
 import fr.fonctions.metier.Soins;
 import fr.personnage.EtreVivant;
 /**
- *
+ *Medecins
  * @author roumi
  */
 public class Medecin extends Metier implements Soins {

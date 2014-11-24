@@ -9,7 +9,7 @@ import java.util.Scanner;
 import fr.personnage.Tamagoshi;
 
 /**
- *
+ *Classe abstraite qui contient le menu commun à tous les lieux
  * @author roumi
  */
 public abstract class Lieux {
@@ -17,6 +17,12 @@ public abstract class Lieux {
     private String nom;
 
     //Methodes
+    /**
+         * Menu de toutes les pièces
+         * 
+         * @param Tamagoshi
+         *          .
+         */
     public void menuJeu(Tamagoshi monTama) {
     
         Scanner entree = new Scanner(System.in);
@@ -69,9 +75,19 @@ public abstract class Lieux {
 
         }
     }
-
+/**
+         * Actions disponibles dans la maison
+         * 
+         * @param Tamagoshi
+         *           
+         */
     public abstract void faireAction(Tamagoshi monTama);
-
+/**
+         * Créer une liste de lieux
+         * 
+         * 
+         *           Lieux
+         */
     public  Lieux[] creerListeLieux() {
 
         //Tableau des lieux
@@ -89,7 +105,13 @@ public abstract class Lieux {
 
     }
 
-
+/**
+         * Affiche l'etat du Tama
+         * 
+         * @param Tamagoshi
+         *      String
+         *           
+         */
     public String voirEtat(Tamagoshi monTama){
     
         String etat=" ";

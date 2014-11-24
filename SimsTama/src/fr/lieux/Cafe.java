@@ -6,7 +6,7 @@
 package fr.lieux;
 import fr.personnage.Tamagoshi;
 /**
- *
+ *Cafe
  * @author roumi
  */
 public class Cafe extends Lieux{

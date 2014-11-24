@@ -1,3 +1,4 @@
+
 /* Classe qui gère le jeu */
 package fr.gestion.jeu;
 
@@ -7,14 +8,21 @@ import fr.lieux.Maison;
 import fr.personnage.Tamagoshi;
 
 /**
- *
+ *Cette classe gère les liens entre les classes.
  * @author roumi
+ * 
  */
 public class MonJeu {
 
     //***************Variables******************//
     //***************Methodes*******************// 
     // Menu 
+    /**
+         * Menu début de jeu
+         * 
+         * 
+         *           
+         */
     public void Menu() {
 
         //On écrit le menu 
@@ -46,6 +54,12 @@ public class MonJeu {
     }
 
     //Methode qui va lancer le jeu et le diriger
+    /**
+         * Création du Tama, lieux et univers
+         * 
+         * 
+         *           
+         */
     public void jeu() {
         Tamagoshi monTama = creationTama();
         Lieux monLieu= new Maison();
@@ -62,7 +76,12 @@ public class MonJeu {
    
       
     }
-
+/**
+         * Création du Tama
+         * 
+         *
+         *           
+         */
     //Création d'un tama 
     public Tamagoshi creationTama() {
 

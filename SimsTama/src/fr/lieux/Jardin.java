@@ -7,7 +7,7 @@ package fr.lieux;
 import fr.personnage.Tamagoshi;
 
 /**
- *
+ *Jardin
  * @author roumi
  */
 public class Jardin extends Lieux {

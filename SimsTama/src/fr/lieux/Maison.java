@@ -9,7 +9,7 @@ import fr.personnage.Tamagoshi;
 import java.util.Scanner;
 
 /**
- *
+ *Lieux de départ. Contient les methodes pour s'occuper du Tama
  * @author roumi
  */
 public class Maison extends Lieux {
@@ -24,7 +24,12 @@ public class Maison extends Lieux {
     public void menuMaison(Tamagoshi monTama) {
 
     }
-
+/**
+         * Les actions que l'on peut faire à la maison.
+         * 
+         * @param Tamagoshi
+         *            
+         */
     public void faireAction(Tamagoshi monTama) {
 
         Scanner entree = new Scanner(System.in);

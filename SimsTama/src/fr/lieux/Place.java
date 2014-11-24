@@ -9,7 +9,7 @@ import fr.personnage.Tamagoshi;
 import java.util.Scanner;
 
 /**
- *
+ *La place. 
  * @author roumi
  */
 public class Place extends Lieux {

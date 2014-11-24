@@ -9,7 +9,7 @@ package fr.metier;
 import fr.personnage.EtreVivant;
 
 /**
- *
+ *Policier
  * @author roumi
  */
 public class Policier extends Metier {
