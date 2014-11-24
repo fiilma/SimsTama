@@ -5,7 +5,7 @@
 package fr.personnage;
 
 /**
- *
+ *classe qui va contenir toutes les jauges de chaque etreVivant
  * @author isen
  */
 public class Jauge {

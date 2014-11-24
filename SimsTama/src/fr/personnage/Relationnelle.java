@@ -5,7 +5,7 @@
 package fr.personnage;
 
 /**
- *
+ *classe qui est utilisée pour former la liste de contact d'une personne ainsi que sa jauge relationnelle avec cette personne
  * @author isen
  */
 public class Relationnelle {

@@ -5,7 +5,7 @@ Classe Etre humain.
 package fr.personnage;
 
 /**
- *
+ *classe qui hérite de etreVivant et qui contient la description de tous les humains
  * @author roumi
  */
 public class EtreHumain extends EtreVivant {

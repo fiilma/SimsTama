@@ -8,7 +8,7 @@ import fr.lieux.Lieux;
 import java.util.LinkedList;
 
 /**
- *
+ *classe qui contient la base de tous les êtres vivants (humain ou tamagoshi)
  * @author isen
  */
 public class EtreVivant {
@@ -81,6 +81,8 @@ public class EtreVivant {
     }
 
     //******** Methodes de la classe *******//
+    
+    
     public void feterSonAnniversaire() {
         this.age++;
         //System.out.println("joyeux anniversaire " + prenom + " tu as maintenant " + this.age + " ans!!");
