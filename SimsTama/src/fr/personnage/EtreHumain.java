@@ -46,7 +46,7 @@ public class EtreHumain extends EtreVivant {
     
     //****** Methodes des êtres humain ******//
     
-    public void travailler(EtreHumain humain){
+    public void travailler(){
     
     System.out.print(("Hello"));
     
