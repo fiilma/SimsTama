@@ -72,7 +72,7 @@ public class EtreVivant {
         this.statutEtat = 1;
         this.age = 0;
 
-        // position = "maison";
+
 
         this.monId = id;
         id++;
